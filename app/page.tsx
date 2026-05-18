@@ -329,7 +329,7 @@ export default function RelevamientoEspaciosVerdes() {
               <div className="w-full mb-8">
                 <button 
                   type="button" 
-                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.png" : "/Calistenia.jpeg" })} 
+                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.jpg" : "/Calistenia.jpeg" })} 
                   className="w-full py-4 border-2 rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all cursor-pointer shadow-md bg-[#FFCB00] border-[#E6B800] text-[#07111F] hover:bg-[#E6B800]"
                 >
                   📷 Foto Ejemplo
