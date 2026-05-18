@@ -220,7 +220,7 @@ export default function RelevamientoEspaciosVerdes() {
         darkMode ? "bg-[#122033] border-white/5" : "bg-white border-[#153244]/10 shadow-sm"
       }`}>
         <h1 className={`text-3xl md:text-5xl font-black tracking-tighter ${darkMode ? "text-white" : "text-[#153244]"}`}>
-          Relevamiento <span className="text-[#8DE2D6]">de Uso</span>
+          Relevamiento <span className={darkMode ? "text-[#8DE2D6]" : "text-[#153244]"}>de Uso</span>
         </h1>
         <p className={`text-xs font-bold uppercase tracking-[0.2em] mt-2 ${darkMode ? "text-white/40" : "text-[#153244]/60"}`}>Formulario</p>
       </header>
@@ -286,24 +286,27 @@ export default function RelevamientoEspaciosVerdes() {
               <h2 className={`text-xl font-bold ${darkMode ? "text-white" : "text-[#153244]"}`}>Seleccione la Oferta a Relevar</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {Object.keys(preguntas).map((tipo) => (
-                <button 
-                  key={tipo} 
-                  type="button"
-                  onClick={() => { setOfertaActual(tipo); setErrores({}); setAnimarSelector(false); }} 
-                  className={`p-4 rounded-2xl border-2 transition-all text-sm font-bold h-24 flex items-center justify-center text-center cursor-pointer ${
-                    ofertaActual === tipo 
-                      ? "border-[#8DE2D6] bg-[#8DE2D6]/10 text-[#8DE2D6]" 
-                      : animarSelector 
-                        ? "border-[#FFCB00]/60 bg-[#FFCB00]/5 text-white animate-pulse" 
-                        : darkMode 
-                          ? "border-white/10 bg-[#07111F] text-white/60 hover:border-white/20" 
-                          : "border-[#153244]/10 bg-[#EDF2F7] text-[#153244]/60 hover:border-[#153244]/20"
-                  }`}
-                >
-                  {tipo}
-                </button>
-              ))}
+              {Object.keys(preguntas).map((tipo) => {
+                const btnOfertaStyle = ofertaActual === tipo 
+                  ? darkMode 
+                    ? "border-[#8DE2D6] bg-[#8DE2D6]/10 text-[#8DE2D6]" 
+                    : "border-[#153244] bg-[#153244]/10 text-[#153244]"
+                  : animarSelector 
+                    ? "border-[#FFCB00]/60 bg-[#FFCB00]/5 text-white animate-pulse" 
+                    : darkMode 
+                      ? "border-white/10 bg-[#07111F] text-white/60 hover:border-white/20" 
+                      : "border-[#153244]/10 bg-[#EDF2F7] text-[#153244]/60 hover:border-[#153244]/20";
+                return (
+                  <button 
+                    key={tipo} 
+                    type="button"
+                    onClick={() => { setOfertaActual(tipo); setErrores({}); setAnimarSelector(false); }} 
+                    className={`p-4 rounded-2xl border-2 transition-all text-sm font-bold h-24 flex items-center justify-center text-center cursor-pointer ${btnOfertaStyle}`}
+                  >
+                    {tipo}
+                  </button>
+                );
+              })}
             </div>
           </section>
         )}
@@ -311,11 +314,11 @@ export default function RelevamientoEspaciosVerdes() {
         {/* PASO 3 */}
         {ofertaActual && (
           <section className={`rounded-[32px] p-6 md:p-8 mb-6 border-2 transition-colors duration-500 shadow-2xl ${
-            darkMode ? "bg-[#07111F] border-[#8DE2D6]/30" : "bg-white border-[#8DE2D6]"
+            darkMode ? "bg-[#07111F] border-[#8DE2D6]/30" : "bg-white border-[#153244]"
           }`}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-white/5">
               <div className="text-center sm:text-left">
-                <span className="text-[#8DE2D6] text-xs font-black uppercase tracking-widest">Información de:</span>
+                <span className={`text-xs font-black uppercase tracking-widest ${darkMode ? "text-[#8DE2D6]" : "text-[#153244]/60"}`}>Información de:</span>
                 <h3 className={`text-3xl font-black mt-1 ${darkMode ? "text-white" : "text-[#153244]"}`}>{ofertaActual}</h3>
               </div>
               <button type="button" onClick={() => resetOferta("")} className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 px-5 py-3 rounded-2xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer">✕ Descartar esta Carga</button>
@@ -346,8 +349,8 @@ export default function RelevamientoEspaciosVerdes() {
                         value={respuestasActuales[pregunta] || ""} 
                         onChange={(e) => setRespuestasActuales({ ...respuestasActuales, [pregunta]: e.target.value })} 
                         placeholder="Escribí acá si notaste algo raro..." 
-                        className={`w-full rounded-2xl border p-5 focus:border-[#8DE2D6] outline-none transition-all ${
-                          darkMode ? "bg-[#122033] border-white/10 text-white" : "bg-[#F8FAFC] border-[#153244]/10 text-[#153244]"
+                        className={`w-full rounded-2xl border p-5 outline-none transition-all ${
+                          darkMode ? "bg-[#122033] border-white/10 text-white focus:border-[#8DE2D6]" : "bg-[#F8FAFC] border-[#153244]/10 text-[#153244] focus:border-[#153244]"
                         }`} 
                         rows={3} 
                       />
@@ -358,7 +361,9 @@ export default function RelevamientoEspaciosVerdes() {
                 </div>
               ))}
             </div>
-            <button type="button" onClick={guardarOferta} className="w-full mt-12 bg-[#8DE2D6] text-[#07111F] py-6 rounded-3xl text-xl font-black hover:scale-[1.02] active:scale-95 transition-all shadow-lg cursor-pointer">Guardar Oferta ✓</button>
+            <button type="button" onClick={guardarOferta} className={`w-full mt-12 py-6 rounded-3xl text-xl font-black hover:scale-[1.02] active:scale-95 transition-all shadow-lg cursor-pointer ${
+              darkMode ? "bg-[#8DE2D6] text-[#07111F]" : "bg-[#153244] text-white"
+            }`}>Guardar Oferta ✓</button>
           </section>
         )}
 
@@ -373,7 +378,9 @@ export default function RelevamientoEspaciosVerdes() {
                     darkMode ? "bg-[#07111F] border-white/5" : "bg-[#F8FAFC] border-[#153244]/10"
                   }`}>
                     <div className="flex items-center gap-4">
-                      <button type="button" onClick={() => { setOfertaActual(o.tipo); setRespuestasActuales(o.respuestas); setOfertasCargadas(ofertasCargadas.filter((item) => item.id !== o.id)); }} className="w-10 h-10 rounded-full bg-[#8DE2D6]/10 border border-[#8DE2D6]/30 flex items-center justify-center text-[#8DE2D6] font-bold cursor-pointer">✎</button>
+                      <button type="button" onClick={() => { setOfertaActual(o.tipo); setRespuestasActuales(o.respuestas); setOfertasCargadas(ofertasCargadas.filter((item) => item.id !== o.id)); }} className={`w-10 h-10 rounded-full border flex items-center justify-center font-bold cursor-pointer ${
+                        darkMode ? "bg-[#8DE2D6]/10 border-[#8DE2D6]/30 text-[#8DE2D6]" : "bg-[#153244]/10 border-[#153244]/30 text-[#153244]"
+                      }`}>✎</button>
                       <div>
                         <span className={`text-xs font-black block ${darkMode ? "text-slate-400" : "text-[#153244]/60"}`}>OFERTA {i + 1}</span>
                         <span className={`font-bold text-lg ${darkMode ? "text-white" : "text-[#153244]"}`}>{o.tipo}</span>
@@ -398,7 +405,7 @@ export default function RelevamientoEspaciosVerdes() {
           <div className={`p-12 rounded-[50px] border text-center max-w-sm w-full ${darkMode ? "bg-[#122033] border-white/10" : "bg-white border-[#153244]/10"}`}>
             {!mensajeExito ? (
               <>
-                <div className="flex justify-center mb-8"><div className="w-20 h-20 border-8 border-white/10 border-t-[#8DE2D6] rounded-full animate-spin"></div></div>
+                <div className="flex justify-center mb-8"><div className={`w-20 h-20 border-8 border-white/10 rounded-full animate-spin ${darkMode ? "border-t-[#8DE2D6]" : "border-t-[#153244]"}`}></div></div>
                 <h2 className={`text-3xl font-black mb-2 uppercase ${darkMode ? "text-white" : "text-[#153244]"}`}>Enviando</h2>
                 <p className={darkMode ? "text-slate-400" : "text-[#475569]"}>No cierres la página...</p>
               </>
@@ -406,7 +413,7 @@ export default function RelevamientoEspaciosVerdes() {
               <>
                 <div className="text-8xl mb-6 animate-bounce">✅</div>
                 <h2 className={`text-3xl font-black mb-2 uppercase ${darkMode ? "text-white" : "text-[#153244]"}`}>¡Recibido!</h2>
-                <p className="text-[#8DE2D6] font-bold uppercase tracking-widest text-xs">Carga completada con éxito</p>
+                <p className={`font-bold uppercase tracking-widest text-xs ${darkMode ? "text-[#8DE2D6]" : "text-[#153244]"}`}>Carga completada con éxito</p>
               </>
             )}
           </div>
@@ -462,7 +469,7 @@ function CampoSelectConBuscador({ titulo, value, onChange, opciones, disabled, d
   }, []);
 
   const selectColorClass = value 
-    ? `border-[#8DE2D6]/40 ${darkMode ? "text-white" : "text-[#153244]"}`
+    ? darkMode ? "border-[#8DE2D6]/40 text-white" : "border-[#153244]/40 text-[#153244]"
     : darkMode ? "border-white/10 text-white/40 bg-[#07111F]" : "border-[#153244]/10 text-[#153244]/40 bg-[#F8FAFC]";
 
   return (
@@ -484,25 +491,26 @@ function CampoSelectConBuscador({ titulo, value, onChange, opciones, disabled, d
             placeholder="Escribí para buscar agente..." 
             value={busqueda} 
             onChange={(e) => setBusqueda(e.target.value)} 
-            className={`w-full border rounded-xl px-4 py-3 font-bold text-sm outline-none focus:border-[#8DE2D6] mb-2 ${
-              darkMode ? "bg-[#07111F] text-white border-white/10" : "bg-[#F8FAFC] text-[#153244] border-[#CBD5E1]"
+            className={`w-full border rounded-xl px-4 py-3 font-bold text-sm outline-none mb-2 ${
+              darkMode ? "bg-[#07111F] text-white border-white/10 focus:border-[#8DE2D6]" : "bg-[#F8FAFC] text-[#153244] border-[#CBD5E1] focus:border-[#153244]"
             }`} 
-            autoFocus 
+            autoFocus beads-placeholder
           />
           <div className="max-h-60 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
-            {opciones.filter((o: string) => o.toLowerCase().includes(busqueda.toLowerCase())).map((opcion: string) => (
-              <div 
-                key={opcion} 
-                onClick={() => { onChange(opcion); setIsOpen(false); setBusqueda(""); }} 
-                className={`px-4 py-3 rounded-xl text-sm font-bold cursor-pointer transition-all ${
-                  value === opcion 
-                    ? "bg-[#8DE2D6]/20 text-[#8DE2D6]" 
-                    : darkMode ? "text-white/80 hover:bg-white/5" : "text-[#153244]/80 hover:bg-[#F1F5F9]"
-                }`}
-              >
-                {opcion}
-              </div>
-            ))}
+            {opciones.filter((o: string) => o.toLowerCase().includes(busqueda.toLowerCase())).map((opcion: string) => {
+              const activeOptionStyle = value === opcion 
+                ? darkMode ? "bg-[#8DE2D6]/20 text-[#8DE2D6]" : "bg-[#153244]/20 text-[#153244]"
+                : darkMode ? "text-white/80 hover:bg-white/5" : "text-[#153244]/80 hover:bg-[#F1F5F9]";
+              return (
+                <div 
+                  key={opcion} 
+                  onClick={() => { onChange(opcion); setIsOpen(false); setBusqueda(""); }} 
+                  className={`px-4 py-3 rounded-xl text-sm font-bold cursor-pointer transition-all ${activeOptionStyle}`}
+                >
+                  {opcion}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
@@ -523,7 +531,7 @@ interface CampoSelectProps {
 
 function CampoSelect({ titulo, value, onChange, opciones, disabled, isLoading, loadingText, darkMode }: CampoSelectProps) {
   const selectStyle = value 
-    ? `border-[#8DE2D6]/40 ${darkMode ? "text-white bg-[#07111F]" : "text-[#153244] bg-white"}` 
+    ? darkMode ? "border-[#8DE2D6]/40 text-white bg-[#07111F]" : "border-[#153244]/40 text-[#153244] bg-white"
     : darkMode ? "border-white/10 text-white/40 bg-[#07111F]" : "border-[#153244]/10 text-[#153244]/40 bg-[#F8FAFC]";
 
   return (
@@ -566,7 +574,7 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
   const containerStyle = error 
     ? "border-red-500 bg-red-500/5" 
     : num !== null 
-      ? "border-[#8DE2D6]/40 bg-[#8DE2D6]/5" 
+      ? darkMode ? "border-[#8DE2D6]/40 bg-[#8DE2D6]/5" : "border-[#153244]/40 bg-[#153244]/5"
       : darkMode ? "border-white/5 bg-[#122033]" : "border-[#153244]/10 bg-[#F8FAFC]";
 
   const btnStyle = darkMode 
@@ -583,7 +591,7 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
         <div className="hidden sm:block w-28"></div>
         <label className={`block text-sm font-bold text-center ${darkMode ? "text-slate-300" : "text-[#153244]"}`}>{titulo}</label>
         <div className="w-auto sm:w-28 flex justify-center sm:justify-end">
-          {imagenEjemplo && <button type="button" onClick={() => setModalAbierto(true)} className="px-3 py-1.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 text-xs font-semibold text-[#8DE2D6] border border-white/10 transition-all cursor-pointer">📷 Foto Ejemplo</button>}
+          {imagenEjemplo && <button type="button" onClick={() => setModalAbierto(true)} className={`px-3 py-1.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 text-xs font-semibold border border-white/10 transition-all cursor-pointer ${darkMode ? "text-[#8DE2D6]" : "text-white"}`}>📷 Foto Ejemplo</button>}
         </div>
       </div>
 
