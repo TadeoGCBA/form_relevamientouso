@@ -15,7 +15,7 @@ const preguntas: Record<string, string[]> = {
   "Patio de juegos": [
     "Cantidad de Personas en Trepadores", "Cantidad de Personas en Tobogan", "Cantidad de Personas en Resortes",
     "Cantidad de Personas en Sube y Baja", "Cantidad de Personas en Calesitas", "Cantidad de Personas en Paneles",
-    "Cantidad de Personas en Mangrullo", "Cantidad de Personas en Lomada", "Cantidad de Personas en Hamacas", "Observaciones",
+    "Cantidad de Personas en Mangrullo", "Cantidad de Personas en Lomada", "Cantidad de Hamacas", "Observaciones",
   ],
   Canil: ["Cantidad de Vecinos", "Cantidad de Paseadores", "Cantidad de Perros", "Observaciones"],
   "Area deportiva": [
@@ -34,7 +34,7 @@ const preguntas: Record<string, string[]> = {
   Calistenia: ["Cantidad de personas en Calistenia", "Observaciones"],
 };
 
-// MAPEO DE IMÁGENES CORREGIDO AL 100% SEGÚN TUS CAPTURAS
+// MAPEO DE IMÁGENES
 const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Cancha de Fútbol/Básquet": "/Area Deportiva/Futbolbasquet.jpeg",
   "Cantidad de Personas en Cancha de Fútbol": "/Area Deportiva/futbol.jpeg",
@@ -103,6 +103,7 @@ export default function RelevamientoEspaciosVerdes() {
   const ofertaRef = useRef<HTMLDivElement>(null);
 
   // ESTADOS
+  const [darkMode, setDarkMode] = useState(false);
   const [espaciosPorComuna, setEspaciosPorComuna] = useState<Record<string, string[]>>({});
   const [loadingEspacios, setLoadingEspacios] = useState(true);
   const [errorBackend, setErrorBackend] = useState<string | null>(null);
@@ -123,6 +124,21 @@ export default function RelevamientoEspaciosVerdes() {
     tipo: "",
     src: "",
   });
+
+  // Efecto para inicializar el tema guardado en localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+    }
+  }, []);
+
+  // Función para alternar el Modo Claro / Oscuro
+  const toggleDarkMode = () => {
+    const nextMode = !darkMode;
+    setDarkMode(nextMode);
+    localStorage.setItem("theme", nextMode ? "dark" : "light");
+  };
 
   useEffect(() => {
     async function obtenerEspacios() {
@@ -198,15 +214,35 @@ export default function RelevamientoEspaciosVerdes() {
   }
 
   return (
-    <main className={`${montserrat.className} min-h-screen bg-[#07111F] text-slate-100 pb-20`}>
-      <header className="bg-[#122033] border-b border-white/5 py-8 px-4 mb-8 text-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-white">
-          Relevamiento <span className="text-[#FFCB00]">de Uso</span>
+    <main className={`${montserrat.className} min-h-screen transition-colors duration-500 pb-20 ${
+      darkMode ? "bg-[#07111F] text-slate-100" : "bg-[#EDF2F7] text-[#153244]"
+    }`}>
+      
+      <header className={`border-b py-8 px-4 mb-8 text-center transition-colors duration-500 ${
+        darkMode ? "bg-[#122033] border-white/5" : "bg-white border-[#153244]/10 shadow-sm"
+      }`}>
+        <h1 className={`text-3xl md:text-5xl font-black tracking-tighter ${darkMode ? "text-white" : "text-[#153244]"}`}>
+          Relevamiento <span className="text-[#8DE2D6]">de Uso</span>
         </h1>
-        <p className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] mt-2">Formulario</p>
+        <p className={`text-xs font-bold uppercase tracking-[0.2em] mt-2 ${darkMode ? "text-white/40" : "text-[#153244]/60"}`}>Formulario</p>
       </header>
 
       <div className="max-w-4xl mx-auto px-4">
+        
+        {/* INTERRUPTOR DE MODO CLARO / OSCURO */}
+        <div className="flex justify-end mb-6">
+          <button
+            onClick={toggleDarkMode}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
+              darkMode
+                ? "border-white/10 bg-white/5 text-white hover:bg-white/10"
+                : "border-[#153244]/10 bg-white text-[#153244] hover:bg-[#F1F5F9] shadow-sm"
+            }`}
+          >
+            {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+          </button>
+        </div>
+
         {errorBackend && (
           <div className="bg-red-500/10 border-2 border-red-500/30 p-6 rounded-3xl mb-6 text-red-300 text-sm font-semibold flex items-center gap-4">
             <span className="text-2xl">❌</span>
@@ -218,31 +254,53 @@ export default function RelevamientoEspaciosVerdes() {
         )}
 
         {/* PASO 1 */}
-        <section className="bg-[#122033] rounded-[32px] p-6 md:p-8 mb-6 border border-white/5 shadow-xl">
+        <section className={`rounded-[32px] p-6 md:p-8 mb-6 border shadow-xl transition-colors duration-500 ${
+          darkMode ? "bg-[#122033] border-white/5" : "bg-white border-[#153244]/10"
+        }`}>
           <div className="flex items-center gap-4 mb-8">
-            <span className="w-8 h-8 rounded-full bg-slate-700 text-slate-200 flex items-center justify-center font-black text-sm">1</span>
-            <h2 className="text-xl font-bold text-white">Informacion General</h2>
+            <span className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm ${
+              darkMode ? "bg-slate-700 text-slate-200" : "bg-[#153244] text-white"
+            }`}>1</span>
+            <h2 className={`text-xl font-bold ${darkMode ? "text-white" : "text-[#153244]"}`}>Información General</h2>
           </div>
           <div className="grid grid-cols-1 gap-6">
-            <CampoSelectConBuscador titulo="Selección de Agente" value={agente} onChange={setAgente} disabled={ofertasCargadas.length > 0} opciones={agentesOpciones} />
+            <CampoSelectConBuscador titulo="Selección de Agente" darkMode={darkMode} value={agente} onChange={setAgente} disabled={ofertasCargadas.length > 0} opciones={agentesOpciones} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <CampoSelect titulo="Horario de Relevamiento" value={horario} onChange={setHorario} disabled={ofertasCargadas.length > 0} opciones={["9:00 hs", "10:00 hs", "11:00 hs", "12:00 hs", "13:00 hs", "14:00 hs", "15:00 hs", "16:00 hs", "17:00 hs", "18:00 hs"]} />
-              <CampoSelect titulo="Comuna" value={comuna} disabled={ofertasCargadas.length > 0 || loadingEspacios || !!errorBackend} isLoading={loadingEspacios} loadingText="⏳ Buscando comunas..." onChange={(v: string) => { setComuna(v); setEspacioVerde(""); }} opciones={Object.keys(espaciosPorComuna)} />
-              {comuna && !errorBackend && <CampoSelect titulo="Espacio Verde" value={espacioVerde} disabled={ofertasCargadas.length > 0} onChange={setEspacioVerde} opciones={espaciosPorComuna[comuna] || []} />}
+              <CampoSelect titulo="Horario de Relevamiento" darkMode={darkMode} value={horario} onChange={setHorario} disabled={ofertasCargadas.length > 0} opciones={["9:00 hs", "10:00 hs", "11:00 hs", "12:00 hs", "13:00 hs", "14:00 hs", "15:00 hs", "16:00 hs", "17:00 hs", "18:00 hs"]} />
+              <CampoSelect titulo="Comuna" darkMode={darkMode} value={comuna} disabled={ofertasCargadas.length > 0 || loadingEspacios || !!errorBackend} isLoading={loadingEspacios} loadingText="⏳ Buscando comunas..." onChange={(v: string) => { setComuna(v); setEspacioVerde(""); }} opciones={Object.keys(espaciosPorComuna)} />
+              {comuna && !errorBackend && <CampoSelect titulo="Espacio Verde" darkMode={darkMode} value={espacioVerde} disabled={ofertasCargadas.length > 0} onChange={setEspacioVerde} opciones={espaciosPorComuna[comuna] || []} />}
             </div>
           </div>
         </section>
 
         {/* PASO 2 */}
         {espacioVerde && agente && horario && (
-          <section ref={ofertaRef} className={`bg-[#122033] rounded-[32px] p-6 md:p-8 mb-6 border transition-all duration-500 shadow-xl ${animarSelector ? "border-[#FFCB00] scale-[1.01] ring-4 ring-[#FFCB00]/20" : "border-white/5"}`}>
+          <section ref={ofertaRef} className={`rounded-[32px] p-6 md:p-8 mb-6 border transition-all duration-500 shadow-xl ${
+            animarSelector 
+              ? "border-[#FFCB00] scale-[1.01] ring-4 ring-[#FFCB00]/20" 
+              : darkMode ? "bg-[#122033] border-white/5" : "bg-white border-[#153244]/10"
+          }`}>
             <div className="flex items-center gap-4 mb-8">
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${animarSelector ? "bg-[#FFCB00] text-[#07111F]" : "bg-slate-700 text-slate-200"}`}>2</span>
-              <h2 className="text-xl font-bold text-white">Seleccione la Oferta a Relevar</h2>
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${
+                animarSelector ? "bg-[#FFCB00] text-[#07111F]" : darkMode ? "bg-slate-700 text-slate-200" : "bg-[#153244] text-white"
+              }`}>2</span>
+              <h2 className={`text-xl font-bold ${darkMode ? "text-white" : "text-[#153244]"}`}>Seleccione la Oferta a Relevar</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {Object.keys(preguntas).map((tipo) => (
-                <button key={tipo} onClick={() => { setOfertaActual(tipo); setErrores({}); setAnimarSelector(false); }} className={`p-4 rounded-2xl border-2 transition-all text-sm font-bold h-24 flex items-center justify-center text-center cursor-pointer ${ofertaActual === tipo ? "border-[#8DE2D6] bg-[#8DE2D6]/10 text-[#8DE2D6]" : animarSelector ? "border-[#FFCB00]/60 bg-[#FFCB00]/5 text-white animate-pulse" : "border-white/10 bg-[#07111F] text-white/60 hover:border-white/20"}`}>
+                <button 
+                  key={tipo} 
+                  onClick={() => { setOfertaActual(tipo); setErrores({}); setAnimarSelector(false); }} 
+                  className={`p-4 rounded-2xl border-2 transition-all text-sm font-bold h-24 flex items-center justify-center text-center cursor-pointer ${
+                    ofertaActual === tipo 
+                      ? "border-[#8DE2D6] bg-[#8DE2D6]/10 text-[#8DE2D6]" 
+                      : animarSelector 
+                        ? "border-[#FFCB00]/60 bg-[#FFCB00]/5 text-white animate-pulse" 
+                        : darkMode 
+                          ? "border-white/10 bg-[#07111F] text-white/60 hover:border-white/20" 
+                          : "border-[#153244]/10 bg-[#EDF2F7] text-[#153244]/60 hover:border-[#153244]/20"
+                  }`}
+                >
                   {tipo}
                 </button>
               ))}
@@ -252,11 +310,13 @@ export default function RelevamientoEspaciosVerdes() {
 
         {/* PASO 3 */}
         {ofertaActual && (
-          <section className="bg-[#07111F] rounded-[32px] p-6 md:p-8 mb-6 border-2 border-[#8DE2D6]/30 shadow-2xl">
+          <section className={`rounded-[32px] p-6 md:p-8 mb-6 border-2 transition-colors duration-500 shadow-2xl ${
+            darkMode ? "bg-[#07111F] border-[#8DE2D6]/30" : "bg-white border-[#8DE2D6]"
+          }`}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-white/5">
               <div className="text-center sm:text-left">
-                <span className="text-[#8DE2D6] text-xs font-black uppercase tracking-widest">Informacion de:</span>
-                <h3 className="text-3xl font-black text-white mt-1">{ofertaActual}</h3>
+                <span className="text-[#8DE2D6] text-xs font-black uppercase tracking-widest">Información de:</span>
+                <h3 className={`text-3xl font-black mt-1 ${darkMode ? "text-white" : "text-[#153244]"}`}>{ofertaActual}</h3>
               </div>
               <button onClick={() => resetOferta("")} className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 px-5 py-3 rounded-2xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer">✕ Descartar esta Carga</button>
             </div>
@@ -264,7 +324,13 @@ export default function RelevamientoEspaciosVerdes() {
             {/* BOTONES GRANDES DE FOTO EJEMPLO */}
             {(ofertaActual === "Canil" || ofertaActual === "Calistenia") && (
               <div className="w-full mb-8">
-                <button type="button" onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.png" : "/Calistenia.jpeg" })} className="w-full py-4 bg-[#1A2E44] hover:bg-[#233A54] border-2 border-[#334E6F] rounded-2xl font-bold text-xl text-white flex items-center justify-center gap-3 transition-all cursor-pointer shadow-md">
+                <button 
+                  type="button" 
+                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.png" : "/Calistenia.jpeg" })} 
+                  className={`w-full py-4 border-2 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 transition-all cursor-pointer shadow-md ${
+                    darkMode ? "bg-[#1A2E44] hover:bg-[#233A54] border-[#334E6F] text-white" : "bg-[#F1F5F9] hover:bg-[#E2E8F0] border-[#CBD5E1] text-[#153244]"
+                  }`}
+                >
                   📷 Foto ejemplo
                 </button>
               </div>
@@ -275,11 +341,19 @@ export default function RelevamientoEspaciosVerdes() {
                 <div key={pregunta}>
                   {pregunta === "Observaciones" ? (
                     <div className="mt-6">
-                      <label className="block text-xs font-black uppercase text-white/40 mb-2 ml-2">Comentarios adicionales</label>
-                      <textarea value={respuestasActuales[pregunta] || ""} onChange={(e) => setRespuestasActuales({ ...respuestasActuales, [pregunta]: e.target.value })} placeholder="Escribí acá si notaste algo raro..." className="w-full rounded-2xl bg-[#122033] border border-white/10 p-5 text-white focus:border-[#8DE2D6] outline-none transition-all" rows={3} />
+                      <label className={`block text-xs font-black uppercase mb-2 ml-2 ${darkMode ? "text-white/40" : "text-[#153244]/40"}`}>Comentarios adicionales</label>
+                      <textarea 
+                        value={respuestasActuales[pregunta] || ""} 
+                        onChange={(e) => setRespuestasActuales({ ...respuestasActuales, [pregunta]: e.target.value })} 
+                        placeholder="Escribí acá si notaste algo raro..." 
+                        className={`w-full rounded-2xl border p-5 focus:border-[#8DE2D6] outline-none transition-all ${
+                          darkMode ? "bg-[#122033] border-white/10 text-white" : "bg-[#F8FAFC] border-[#153244]/10 text-[#153244]"
+                        }`} 
+                        rows={3} 
+                      />
                     </div>
                   ) : (
-                    <ControlCantidad titulo={pregunta} error={errores[pregunta]} value={respuestasActuales[pregunta]} imagenEjemplo={imagenesPorPregunta[pregunta]} ocultarBotonNoTiene={ofertaActual === "Canil" || ofertaActual === "Calistenia"} onChange={(val: string) => { setRespuestasActuales({ ...respuestasActuales, [pregunta]: val }); setErrores({ ...errores, [pregunta]: false }); }} />
+                    <ControlCantidad titulo={pregunta} darkMode={darkMode} error={errores[pregunta]} value={respuestasActuales[pregunta]} imagenEjemplo={imagenesPorPregunta[pregunta]} ocultarBotonNoTiene={ofertaActual === "Canil" || ofertaActual === "Calistenia"} onChange={(val: string) => { setRespuestasActuales({ ...respuestasActuales, [pregunta]: val }); setErrores({ ...errores, [pregunta]: false }); }} />
                   )}
                 </div>
               ))}
@@ -291,23 +365,27 @@ export default function RelevamientoEspaciosVerdes() {
         {/* RESUMEN DE COLA */}
         {ofertasCargadas.length > 0 && !ofertaActual && (
           <div className="mt-12 bg-white/5 rounded-[32px] p-1 border border-white/10 shadow-xl">
-            <div className="bg-[#122033] rounded-[30px] p-6 md:p-8">
-              <h3 className="text-2xl font-black mb-6 text-white">📋 Listas para enviar ({ofertasCargadas.length})</h3>
+            <div className={`rounded-[30px] p-6 md:p-8 ${darkMode ? "bg-[#122033]" : "bg-white"}`}>
+              <h3 className={`text-2xl font-black mb-6 ${darkMode ? "text-white" : "text-[#153244]"}`}>📋 Listas para enviar ({ofertasCargadas.length})</h3>
               <div className="space-y-3 mb-6">
                 {ofertasCargadas.map((o, i) => (
-                  <div key={o.id} className="flex items-center justify-between bg-[#07111F] p-5 rounded-2xl border border-white/5 gap-4">
+                  <div key={o.id} className={`flex items-center justify-between p-5 rounded-2xl border gap-4 ${
+                    darkMode ? "bg-[#07111F] border-white/5" : "bg-[#F8FAFC] border-[#153244]/10"
+                  }`}>
                     <div className="flex items-center gap-4">
                       <button onClick={() => { setOfertaActual(o.tipo); setRespuestasActuales(o.respuestas); setOfertasCargadas(ofertasCargadas.filter((item) => item.id !== o.id)); }} className="w-10 h-10 rounded-full bg-[#8DE2D6]/10 border border-[#8DE2D6]/30 flex items-center justify-center text-[#8DE2D6] font-bold cursor-pointer">✎</button>
                       <div>
-                        <span className="text-xs font-black text-slate-400 block">OFERTA {i + 1}</span>
-                        <span className="font-bold text-lg text-white">{o.tipo}</span>
+                        <span className={`text-xs font-black block ${darkMode ? "text-slate-400" : "text-[#153244]/60"}`}>OFERTA {i + 1}</span>
+                        <span className={`font-bold text-lg ${darkMode ? "text-white" : "text-[#153244]"}`}>{o.tipo}</span>
                       </div>
                     </div>
                     <button onClick={() => setOfertasCargadas(ofertasCargadas.filter((item) => item.id !== o.id))} className="text-red-400/80 font-bold text-sm px-4 py-2 hover:bg-red-500/10 rounded-xl cursor-pointer">Eliminar</button>
                   </div>
                 ))}
               </div>
-              <button onClick={() => resetOferta("")} className="w-full mb-4 bg-white/5 border border-white/10 text-slate-200 py-4 rounded-[20px] font-bold cursor-pointer flex items-center justify-center gap-2"><span>➕</span> Añadir otra Oferta</button>
+              <button onClick={() => resetOferta("")} className={`w-full mb-4 border py-4 rounded-[20px] font-bold cursor-pointer flex items-center justify-center gap-2 ${
+                darkMode ? "bg-white/5 border-white/10 text-slate-200" : "bg-[#F1F5F9] border-[#153244]/10 text-[#153244]"
+              }`}><span>➕</span> Añadir otra Oferta</button>
               <button onClick={finalizarRelevamiento} className="w-full bg-[#FFCB00] text-[#07111F] py-6 rounded-[24px] text-2xl font-black hover:scale-105 active:scale-95 transition-all cursor-pointer">Enviar Formulario</button>
             </div>
           </div>
@@ -317,17 +395,17 @@ export default function RelevamientoEspaciosVerdes() {
       {/* POPUPS Y PANTALLAS DE CARGA */}
       {enviandoFormulario && (
         <div className="fixed inset-0 z-[110] bg-[#07111F]/90 backdrop-blur-xl flex items-center justify-center p-6">
-          <div className="bg-[#122033] p-12 rounded-[50px] border border-white/10 text-center max-w-sm w-full">
+          <div className={`p-12 rounded-[50px] border text-center max-w-sm w-full ${darkMode ? "bg-[#122033] border-white/10" : "bg-white border-[#153244]/10"}`}>
             {!mensajeExito ? (
               <>
                 <div className="flex justify-center mb-8"><div className="w-20 h-20 border-8 border-white/10 border-t-[#8DE2D6] rounded-full animate-spin"></div></div>
-                <h2 className="text-3xl font-black mb-2 uppercase text-white">Enviando</h2>
-                <p className="text-slate-400 font-medium">No cierres la página...</p>
+                <h2 className={`text-3xl font-black mb-2 uppercase ${darkMode ? "text-white" : "text-[#153244]"}`}>Enviando</h2>
+                <p className={darkMode ? "text-slate-400" : "text-[#475569]"}>No cierres la página...</p>
               </>
             ) : (
               <>
                 <div className="text-8xl mb-6 animate-bounce">✅</div>
-                <h2 className="text-3xl font-black mb-2 uppercase text-white">¡Recibido!</h2>
+                <h2 className={`text-3xl font-black mb-2 uppercase ${darkMode ? "text-white" : "text-[#153244]"}`}>¡Recibido!</h2>
                 <p className="text-[#8DE2D6] font-bold uppercase tracking-widest text-xs">Carga completada con éxito</p>
               </>
             )}
@@ -346,13 +424,12 @@ export default function RelevamientoEspaciosVerdes() {
       {/* MODAL GENERAL PARA CANIL Y CALISTENIA */}
       {modalGeneral.abierto && (
         <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#122033] rounded-3xl border border-white/10 p-4 max-w-lg w-full shadow-2xl relative">
+          <div className={`rounded-3xl border p-4 max-w-lg w-full shadow-2xl relative ${darkMode ? "bg-[#122033] border-white/10" : "bg-white border-[#153244]/10"}`}>
             <div className="flex items-center justify-between mb-3 px-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Foto de Referencia: {modalGeneral.tipo}</h4>
-              <button onClick={() => setModalGeneral({ abierto: false, tipo: "", src: "" })} className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center text-sm font-black cursor-pointer">✕</button>
+              <h4 className={`text-xs font-bold uppercase tracking-wider ${darkMode ? "text-slate-400" : "text-[#153244]/60"}`}>Foto de Referencia: {modalGeneral.tipo}</h4>
+              <button onClick={() => setModalGeneral({ abierto: false, tipo: "", src: "" })} className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black cursor-pointer ${darkMode ? "bg-white/5 text-white" : "bg-slate-200 text-[#153244]"}`}>✕</button>
             </div>
             <div className="bg-[#07111F] rounded-2xl overflow-hidden border border-white/5 flex items-center justify-center max-h-[70vh]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={modalGeneral.src} alt={modalGeneral.tipo} className="w-full h-auto object-contain max-h-[65vh]" />
             </div>
           </div>
@@ -368,9 +445,10 @@ interface CampoSelectConBuscadorProps {
   onChange: (val: string) => void;
   opciones: string[];
   disabled?: boolean;
+  darkMode: boolean;
 }
 
-function CampoSelectConBuscador({ titulo, value, onChange, opciones, disabled }: CampoSelectConBuscadorProps) {
+function CampoSelectConBuscador({ titulo, value, onChange, opciones, disabled, darkMode }: CampoSelectConBuscadorProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [busqueda, setBusqueda] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
@@ -385,16 +463,44 @@ function CampoSelectConBuscador({ titulo, value, onChange, opciones, disabled }:
 
   return (
     <div className="flex flex-col relative" ref={containerRef}>
-      <label className="text-[10px] uppercase font-black text-white/40 tracking-widest mb-2 ml-2">{titulo}</label>
-      <div onClick={() => !disabled && setIsOpen(!isOpen)} className={`w-full rounded-2xl px-5 py-5 bg-[#07111F] border-2 transition-all font-bold flex justify-between items-center select-none ${value ? "border-[#8DE2D6]/40 text-white" : "border-white/10 text-white/40"} ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}>
-        <span>{value || "Buscar y seleccionar Agente..."}</span><span className="opacity-30 text-xl text-white">▼</span>
+      <label className={`text-[10px] uppercase font-black tracking-widest mb-2 ml-2 ${darkMode ? "text-white/40" : "text-[#153244]/40"}`}>{titulo}</label>
+      <div 
+        onClick={() => !disabled && setIsOpen(!isOpen)} 
+        className={`w-full rounded-2xl px-5 py-5 border-2 transition-all font-bold flex justify-between items-center select-none ${
+          value 
+            ? "border-[#8DE2D6]/40 " + (darkMode ? "text-white" : "text-[#153244]") 
+            : darkMode ? "border-white/10 text-white/40 bg-[#07111F]" : "border-[#153244]/10 text-[#153244]/40 bg-[#F8FAFC]"
+        } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+      >
+        <span>{value || "Buscar y seleccionar Agente..."}</span><span className={`opacity-30 text-xl ${darkMode ? "text-white" : "text-[#153244]"}`}>▼</span>
       </div>
       {isOpen && (
-        <div className="absolute top-[102%] left-0 w-full bg-[#121926] border-2 border-slate-700 rounded-2xl shadow-2xl z-[100] p-3 mt-1">
-          <input type="text" placeholder="Escribí para buscar agente..." value={busqueda} onChange={(e) => setBusqueda(e.target.value)} className="w-full bg-[#07111F] text-white border border-white/10 rounded-xl px-4 py-3 font-bold text-sm outline-none focus:border-[#8DE2D6] mb-2" autoFocus />
+        <div className={`absolute top-[102%] left-0 w-full border-2 rounded-2xl shadow-2xl z-[100] p-3 mt-1 ${
+          darkMode ? "bg-[#121926] border-slate-700" : "bg-white border-[#CBD5E1]"
+        }`}>
+          <input 
+            type="text" 
+            placeholder="Escribí para buscar agente..." 
+            value={busqueda} 
+            onChange={(e) => setBusqueda(e.target.value)} 
+            className={`w-full border rounded-xl px-4 py-3 font-bold text-sm outline-none focus:border-[#8DE2D6] mb-2 ${
+              darkMode ? "bg-[#07111F] text-white border-white/10" : "bg-[#F8FAFC] text-[#153244] border-[#CBD5E1]"
+            }`} 
+            autoFocus 
+          />
           <div className="max-h-60 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
             {opciones.filter((o: string) => o.toLowerCase().includes(busqueda.toLowerCase())).map((opcion: string) => (
-              <div key={opcion} onClick={() => { onChange(opcion); setIsOpen(false); setBusqueda(""); }} className={`px-4 py-3 rounded-xl text-sm font-bold cursor-pointer transition-all ${value === opcion ? "bg-[#8DE2D6]/20 text-[#8DE2D6]" : "text-white/80 hover:bg-white/5"}`}>{opcion}</div>
+              <div 
+                key={opcion} 
+                onClick={() => { onChange(opcion); setIsOpen(false); setBusqueda(""); }} 
+                className={`px-4 py-3 rounded-xl text-sm font-bold cursor-pointer transition-all ${
+                  value === opcion 
+                    ? "bg-[#8DE2D6]/20 text-[#8DE2D6]" 
+                    : darkMode ? "text-white/80 hover:bg-white/5" : "text-[#153244]/80 hover:bg-[#F1F5F9]"
+                }`}
+              >
+                {opcion}
+              </div>
             ))}
           </div>
         </div>
@@ -411,17 +517,27 @@ interface CampoSelectProps {
   disabled?: boolean;
   isLoading?: boolean;
   loadingText?: string;
+  darkMode: boolean;
 }
 
-function CampoSelect({ titulo, value, onChange, opciones, disabled, isLoading, loadingText }: CampoSelectProps) {
+function CampoSelect({ titulo, value, onChange, opciones, disabled, isLoading, loadingText, darkMode }: CampoSelectProps) {
   return (
     <div className="flex flex-col">
-      <label className="text-[10px] uppercase font-black text-white/40 tracking-widest mb-2 ml-2">{titulo}</label>
+      <label className={`text-[10px] uppercase font-black tracking-widest mb-2 ml-2 ${darkMode ? "text-white/40" : "text-[#153244]/40"}`}>{titulo}</label>
       <div className="relative">
-        <select value={value} disabled={disabled || isLoading} onChange={(e) => onChange(e.target.value)} className={`w-full rounded-2xl px-5 py-5 bg-[#07111F] border-2 transition-all outline-none appearance-none font-bold ${value ? "border-[#8DE2D6]/40 text-white" : "border-white/10 text-white/40"} ${isLoading ? "border-[#FFCB00]/30 text-[#FFCB00]/70 animate-pulse bg-[#121c2b]" : ""} ${disabled && !isLoading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}>
-          {isLoading ? <option value="">{loadingText}</option> : <><option value="">Seleccionar...</option>{opciones.map((o: string) => <option key={o} value={o} className="bg-[#121926]">{o}</option>)}</>}
+        <select 
+          value={value} 
+          disabled={disabled || isLoading} 
+          onChange={(e) => onChange(e.target.value)} 
+          className={`w-full rounded-2xl px-5 py-5 border-2 transition-all outline-none appearance-none font-bold ${
+            value 
+              ? "border-[#8DE2D6]/40 " + (darkMode ? "text-white bg-[#07111F]" : "text-[#153244] bg-white") 
+              : darkMode ? "border-white/10 text-white/40 bg-[#07111F]" : "border-[#153244]/10 text-[#153244]/40 bg-[#F8FAFC]"
+          } ${isLoading ? "border-[#FFCB00]/30 text-[#FFCB00]/70 animate-pulse" : ""} ${disabled && !isLoading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+        >
+          {isLoading ? <option value="">{loadingText}</option> : <><option value="">Seleccionar...</option>{opciones.map((o: string) => <option key={o} value={o} className={darkMode ? "bg-[#121926]" : "bg-white text-[#153244]"}>{o}</option>)}</>}
         </select>
-        <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none opacity-30 text-xl text-white">▼</div>
+        <div className={`absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none opacity-30 text-xl ${darkMode ? "text-white" : "text-[#153244]"}`}>▼</div>
       </div>
     </div>
   );
@@ -434,9 +550,10 @@ interface ControlCantidadProps {
   error?: boolean;
   ocultarBotonNoTiene?: boolean;
   imagenEjemplo?: string;
+  darkMode: boolean;
 }
 
-function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, imagenEjemplo }: ControlCantidadProps) {
+function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, imagenEjemplo, darkMode }: ControlCantidadProps) {
   const [modalAbierto, setModalAbierto] = useState(false);
   const num = value === "No Tiene" ? -1 : (value === "" || value === undefined ? null : parseInt(value));
 
@@ -446,19 +563,25 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
   };
 
   return (
-    <div className={`p-4 md:p-6 rounded-[24px] border-2 transition-all ${error ? "border-red-500 bg-red-500/5" : num !== null ? "border-[#8DE2D6]/40 bg-[#8DE2D6]/5" : "border-white/5 bg-[#122033]"}`}>
+    <div className={`p-4 md:p-6 rounded-[24px] border-2 transition-all ${
+      error 
+        ? "border-red-500 bg-red-500/5" 
+        : num !== null 
+          ? "border-[#8DE2D6]/40 bg-[#8DE2D6]/5" 
+          : darkMode ? "border-white/5 bg-[#122033]" : "border-[#153244]/10 bg-[#F8FAFC]"
+    }`}>
       <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
         <div className="hidden sm:block w-28"></div>
-        <label className="block text-sm font-bold text-center text-slate-300">{titulo}</label>
+        <label className={`block text-sm font-bold text-center ${darkMode ? "text-slate-300" : "text-[#153244]"}`}>{titulo}</label>
         <div className="w-auto sm:w-28 flex justify-center sm:justify-end">
           {imagenEjemplo && <button type="button" onClick={() => setModalAbierto(true)} className="px-3 py-1.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 text-xs font-semibold text-[#8DE2D6] border border-white/10 transition-all cursor-pointer">📷 Foto Ejemplo</button>}
         </div>
       </div>
 
       <div className="flex items-center justify-between max-w-[280px] mx-auto gap-4">
-        <button onClick={() => num === 0 ? (!ocultarBotonNoTiene ? onChange("No Tiene") : null) : ajustar(-1)} className="w-14 h-14 rounded-2xl bg-[#07111F] border border-white/10 flex items-center justify-center text-2xl font-black text-white cursor-pointer">-</button>
-        <div className="flex-1 text-center"><span className={`text-3xl font-black ${num === -1 ? "text-slate-500 text-xl" : "text-white"}`}>{num === -1 ? "No tiene" : num === null ? "?" : num}</span></div>
-        <button onClick={() => ajustar(1)} className="w-14 h-14 rounded-2xl bg-[#07111F] border border-white/10 flex items-center justify-center text-2xl font-black text-white cursor-pointer">+</button>
+        <button onClick={() => num === 0 ? (!ocultarBotonNoTiene ? onChange("No Tiene") : null) : ajustar(-1)} className={`w-14 h-14 rounded-2xl border flex items-center justify-center text-2xl font-black cursor-pointer ${darkMode ? "bg-[#07111F] border-white/10 text-white" : "bg-white border-[#153244]/20 text-[#153244]"}`}>-</button>
+        <div className="flex-1 text-center"><span className={`text-3xl font-black ${num === -1 ? "text-slate-500 text-xl" : darkMode ? "text-white" : "text-[#153244]"}`}>{num === -1 ? "No tiene" : num === null ? "?" : num}</span></div>
+        <button onClick={() => ajustar(1)} className={`w-14 h-14 rounded-2xl border flex items-center justify-center text-2xl font-black cursor-pointer ${darkMode ? "bg-[#07111F] border-white/10 text-white" : "bg-white border-[#153244]/20 text-[#153244]"}`">+</button>
       </div>
 
       {!ocultarBotonNoTiene && (
@@ -469,13 +592,12 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
 
       {modalAbierto && (
         <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#122033] rounded-3xl border border-white/10 p-4 max-w-lg w-full relative">
+          <div className={`rounded-3xl border p-4 max-w-lg w-full relative ${darkMode ? "bg-[#122033] border-white/10" : "bg-white border-[#153244]/10"}`}>
             <div className="flex items-center justify-between mb-3 px-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 truncate max-w-[85%]">{titulo}</h4>
-              <button onClick={() => setModalAbierto(false)} className="w-8 h-8 rounded-full bg-white/5 text-white flex items-center justify-center text-sm font-black cursor-pointer">✕</button>
+              <h4 className={`text-xs font-bold uppercase tracking-wider truncate max-w-[85%] ${darkMode ? "text-slate-400" : "text-[#153244]/60"}`}>{titulo}</h4>
+              <button onClick={() => setModalAbierto(false)} className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black cursor-pointer ${darkMode ? "bg-white/5 text-white" : "bg-slate-200 text-[#153244]"}`}>✕</button>
             </div>
             <div className="bg-[#07111F] rounded-2xl overflow-hidden flex items-center justify-center max-h-[70vh]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imagenEjemplo} alt={titulo} className="w-full h-auto object-contain max-h-[65vh]" />
             </div>
           </div>
