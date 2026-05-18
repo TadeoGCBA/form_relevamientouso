@@ -378,7 +378,7 @@ export default function RelevamientoEspaciosVerdes() {
           }`}
         >
           Relevamiento{" "}
-          <span className={darkMode ? "text-[#FFCB00]" : "text-[#064E3B]"}>
+          <span className={darkMode ? "text-[#FFCB00]" : "text-[#8de2de6]"}>
             de Uso
           </span>
         </h1>
