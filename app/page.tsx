@@ -324,17 +324,15 @@ export default function RelevamientoEspaciosVerdes() {
               <button type="button" onClick={() => resetOferta("")} className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 px-5 py-3 rounded-2xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer">✕ Descartar esta Carga</button>
             </div>
 
-            {/* BOTONES GRANDES DE FOTO EJEMPLO */}
+            {/* BOTONES GRANDES DE FOTO EJEMPLO (CANIL / CALISTENIA) */}
             {(ofertaActual === "Canil" || ofertaActual === "Calistenia") && (
               <div className="w-full mb-8">
                 <button 
                   type="button" 
-                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.jpg" : "/Calistenia.jpeg" })} 
-                  className={`w-full py-4 border-2 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 transition-all cursor-pointer shadow-md ${
-                    darkMode ? "bg-[#1A2E44] hover:bg-[#233A54] border-[#334E6F] text-white" : "bg-[#F1F5F9] hover:bg-[#E2E8F0] border-[#CBD5E1] text-[#153244]"
-                  }`}
+                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.png" : "/Calistenia.jpeg" })} 
+                  className="w-full py-4 border-2 rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all cursor-pointer shadow-md bg-[#FFCB00] border-[#E6B800] text-[#07111F] hover:bg-[#E6B800]"
                 >
-                  📷 Foto ejemplo
+                  📷 Foto Ejemplo
                 </button>
               </div>
             )}
@@ -494,7 +492,7 @@ function CampoSelectConBuscador({ titulo, value, onChange, opciones, disabled, d
             className={`w-full border rounded-xl px-4 py-3 font-bold text-sm outline-none mb-2 ${
               darkMode ? "bg-[#07111F] text-white border-white/10 focus:border-[#8DE2D6]" : "bg-[#F8FAFC] text-[#153244] border-[#CBD5E1] focus:border-[#153244]"
             }`} 
-            autoFocus beads-placeholder
+            autoFocus
           />
           <div className="max-h-60 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
             {opciones.filter((o: string) => o.toLowerCase().includes(busqueda.toLowerCase())).map((opcion: string) => {
@@ -591,7 +589,15 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
         <div className="hidden sm:block w-28"></div>
         <label className={`block text-sm font-bold text-center ${darkMode ? "text-slate-300" : "text-[#153244]"}`}>{titulo}</label>
         <div className="w-auto sm:w-28 flex justify-center sm:justify-end">
-          {imagenEjemplo && <button type="button" onClick={() => setModalAbierto(true)} className={`px-3 py-1.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 text-xs font-semibold border border-white/10 transition-all cursor-pointer ${darkMode ? "text-[#8DE2D6]" : "text-white"}`}>📷 Foto Ejemplo</button>}
+          {imagenEjemplo && (
+            <button 
+              type="button" 
+              onClick={() => setModalAbierto(true)} 
+              className="px-3 py-1.5 rounded-xl text-xs font-black uppercase transition-all cursor-pointer bg-[#FFCB00] border border-[#E6B800] text-[#07111F] hover:bg-[#E6B800] shadow-sm"
+            >
+              📷 Foto Ejemplo
+            </button>
+          )}
         </div>
       </div>
 
@@ -626,4 +632,5 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
       )}
     </div>
   );
+}
 }
