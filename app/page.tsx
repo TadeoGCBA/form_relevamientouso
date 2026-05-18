@@ -329,7 +329,7 @@ export default function RelevamientoEspaciosVerdes() {
               <div className="w-full mb-8">
                 <button 
                   type="button" 
-                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.png" : "/Calistenia.jpeg" })} 
+                  onClick={() => setModalGeneral({ abierto: true, tipo: ofertaActual, src: ofertaActual === "Canil" ? "/canil.jpg" : "/Calistenia.jpeg" })} 
                   className={`w-full py-4 border-2 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 transition-all cursor-pointer shadow-md ${
                     darkMode ? "bg-[#1A2E44] hover:bg-[#233A54] border-[#334E6F] text-white" : "bg-[#F1F5F9] hover:bg-[#E2E8F0] border-[#CBD5E1] text-[#153244]"
                   }`}
