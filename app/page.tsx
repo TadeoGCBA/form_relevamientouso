@@ -34,10 +34,10 @@ const preguntas: Record<string, string[]> = {
   Calistenia: ["Cantidad de personas en Calistenia", "Observaciones"],
 };
 
-// MAPEO DE IMÁGENES COMPLETO
+// MAPEO DE IMÁGENES CORREGIDO AL 100% SEGÚN TUS CAPTURAS
 const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Cancha de Fútbol/Básquet": "/Area Deportiva/Futbolbasquet.jpeg",
-  "Cantidad de Personas en Cancha de Fútbol": "/Area Deportiva/Futbol.jpeg",
+  "Cantidad de Personas en Cancha de Fútbol": "/Area Deportiva/futbol.jpeg",
   "Cantidad de Personas en Cancha de Básquet": "/Area Deportiva/basquet.jpeg",
   "Cantidad de Personas en Cancha de Fútbol - Tenis": "/Area Deportiva/futboltenis.jpeg",
   "Cantidad de Personas en Skate Park": "/Area Deportiva/skatepark.jpeg",
@@ -54,7 +54,7 @@ const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Sube y Baja": "/Patio de Juego/subeybaja.png",
   "Cantidad de Personas en Calesitas": "/Patio de Juego/calesita.png",
   "Cantidad de Personas en Paneles": "/Patio de Juego/Paneles.png",
-  "Cantidad de Mangrullo": "/Patio de Juego/mangrullo.png",
+  "Cantidad de Personas en Mangrullo": "/Patio de Juego/mangrullo.png",
   "Cantidad de Personas en Lomada": "/Patio de Juego/lomada.png",
   "Cantidad de Personas en Hamacas": "/Patio de Juego/hamacas.png",
   "Cantidad de personas en Caminador Simple": "/Postas Aerobicas/camsimple.png",
@@ -338,7 +338,7 @@ export default function RelevamientoEspaciosVerdes() {
       {errorValidacion && (
         <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[120] w-[90%] max-w-md">
           <div className="bg-red-600 text-white p-5 rounded-3xl shadow-2xl font-black text-center flex items-center justify-center gap-4 border-4 border-red-400 animate-in slide-up-from-bottom">
-            <span className="text-3xl">⚠️</span><span className="text-sm">¡Atención! Te faltó completar algunas preguntas en rojo.</span>
+            <span className="text-3xl">⚠️</span><span className="text-sm">¡Atención! Te faltó completar algunas preguntas en ojo.</span>
           </div>
         </div>
       )}
