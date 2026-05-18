@@ -633,4 +633,4 @@ function ControlCantidad({ titulo, value, onChange, error, ocultarBotonNoTiene, 
     </div>
   );
 }
-}
+
