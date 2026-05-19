@@ -69,7 +69,7 @@ const preguntas: Record<string, string[]> = {
 const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Cancha de Fútbol/Básquet":
     "/Area Deportiva/Futbolbasquet.jpeg",
-  "Cantidad de Personas en Cancha de Fútbol": "/Area Deportiva/futbol.jpeg",
+  "Cantidad de Personas en Cancha de Fútbol": "/Area Deportiva/Futbol.jpeg",
   "Cantidad de Personas en Cancha de Básquet": "/Area Deportiva/basquet.jpeg",
   "Cantidad de Personas en Cancha de Fútbol - Tenis":
     "/Area Deportiva/futboltenis.jpeg",
