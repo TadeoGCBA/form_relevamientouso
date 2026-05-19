@@ -968,7 +968,7 @@ function CampoSelectConBuscador({
         >
           <input
             type="text"
-            placeholder="Escribí para buscar agente..."
+            placeholder="Escribí para buscar..."
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
             className={`w-full border rounded-xl px-4 py-3 font-bold text-sm outline-none mb-2 ${
