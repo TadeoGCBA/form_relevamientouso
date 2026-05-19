@@ -496,16 +496,16 @@ export default function RelevamientoEspaciosVerdes() {
                 }}
                 opciones={Object.keys(espaciosPorComuna)}
               />
-              {comuna && !errorBackend && (
-                <CampoSelect
-                  titulo="Espacio Verde"
-                  darkMode={darkMode}
-                  value={espacioVerde}
-                  disabled={ofertasCargadas.length > 0}
-                  onChange={setEspacioVerde}
-                  opciones={espaciosPorComuna[comuna] || []}
-                />
-              )}
+           {comuna && !errorBackend && (
+  <CampoSelectConBuscador
+    titulo="Espacio Verde"
+    darkMode={darkMode}
+    value={espacioVerde}
+    disabled={ofertasCargadas.length > 0}
+    onChange={setEspacioVerde}
+    opciones={espaciosPorComuna[comuna] || []}
+  />
+)}
             </div>
           </div>
         </section>
