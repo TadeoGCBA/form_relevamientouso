@@ -188,6 +188,7 @@ const agentesOpciones = [
   "LENTI AGUSTIN DANIEL",
   "PONTORIERO MAXIMILIANO GASTON",
   "LOPEZ RODRIGO DANIEL",
+  "CHAMES DUCA ELEAZAR MIGUEL",
 ];
 
 interface OfertaCargada {
