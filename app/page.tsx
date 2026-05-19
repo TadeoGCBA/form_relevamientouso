@@ -949,7 +949,7 @@ function CampoSelectConBuscador({
           disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
         }`}
       >
-        <span>{value || "Buscar y seleccionar Agente..."}</span>
+        <span>{value || "Buscar y seleccionar..."}</span>
         <span
           className={`text-xl ${
             darkMode ? "text-white opacity-30" : "text-[#153244] opacity-60"
