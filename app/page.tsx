@@ -74,7 +74,7 @@ const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Cancha de Fútbol - Tenis":
     "/Area Deportiva/futboltenis.jpeg",
   "Cantidad de Personas en Skate Park": "/Area Deportiva/skatepark.jpeg",
-  "Cantidad de Mini Fútbol": "/Area Deportiva/minifutbol.jpeg",
+  "Cantidad de Personas en Cancha de Mini Fútbol": "/Area Deportiva/minifutbol.jpeg",
   "Cantidad de Personas en Cancha de Vóley": "/Area Deportiva/voley.jpeg",
   "Cantidad de Personas en Cancha Bochas": "/Area Deportiva/cancha bochas.jpeg",
   "Cantidad de Pista Patinaje": "/Area Deportiva/pista de patinaje.jpeg",
