@@ -11,7 +11,6 @@ const montserrat = Montserrat({
 const APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyJrHdXHzjrhl0xLsRRZTvTwmud0zvv3qlTFd7KSxbK0RnUY-ErFIVXz0xdNTwnkwCvPw/exec";
 
-// CONFIGURACIÓN DE PREGUNTAS
 const preguntas: Record<string, string[]> = {
   "Patio de juegos": [
     "Cantidad de Personas en Trepadores",
@@ -65,7 +64,6 @@ const preguntas: Record<string, string[]> = {
   Calistenia: ["Cantidad de personas en Calistenia", "Observaciones"],
 };
 
-// MAPEO DE IMÁGENES CORREGIDO AL 100%
 const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Cancha de Fútbol/Básquet":
     "/Area Deportiva/Futbolbasquet.jpeg",
@@ -74,7 +72,8 @@ const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Cancha de Fútbol - Tenis":
     "/Area Deportiva/futboltenis.jpeg",
   "Cantidad de Personas en Skate Park": "/Area Deportiva/skatepark.jpeg",
-  "Cantidad de Personas en Cancha de Mini Fútbol": "/Area Deportiva/minifutbol.jpeg",
+  "Cantidad de Personas en Cancha de Mini Fútbol":
+    "/Area Deportiva/minifutbol.jpeg",
   "Cantidad de Personas en Cancha de Vóley": "/Area Deportiva/voley.jpeg",
   "Cantidad de Personas en Cancha Bochas": "/Area Deportiva/cancha bochas.jpeg",
   "Cantidad de Pista Patinaje": "/Area Deportiva/pista de patinaje.jpeg",
@@ -201,7 +200,6 @@ interface OfertaCargada {
 export default function RelevamientoEspaciosVerdes() {
   const ofertaRef = useRef<HTMLDivElement>(null);
 
-  // ESTADOS PRINCIPALES (Por defecto inicia en true, pero el useEffect lo ajustará según el localStorage)
   const [darkMode, setDarkMode] = useState(true);
   const [espaciosPorComuna, setEspaciosPorComuna] = useState<
     Record<string, string[]>
@@ -232,7 +230,6 @@ export default function RelevamientoEspaciosVerdes() {
     src: "",
   });
 
-  // EFECTO PARA MANEJAR PERSISTENCIA DE MODO OSCURO/CLARO
   useEffect(() => {
     const savedMode = localStorage.getItem("preferredTheme");
     if (savedMode !== null) {
@@ -351,7 +348,6 @@ export default function RelevamientoEspaciosVerdes() {
     }
   }
 
-  // LÓGICA DE BORDES DINÁMICOS EN EL PASO 2
   const bordeSeccionPaso2 = animarSelector
     ? darkMode
       ? "border-[#8DE2D6] scale-[1.01] ring-4 ring-[#8DE2D6]/20"
@@ -368,7 +364,7 @@ export default function RelevamientoEspaciosVerdes() {
         darkMode ? "bg-[#07111F] text-slate-100" : "bg-[#EDF2F7] text-[#153244]"
       }`}
     >
-      {/* HEADER DINÁMICO */}
+      {/* HEADER */}
       <header
         className={`py-8 px-4 mb-4 text-center border-b transition-colors duration-300 ${
           darkMode
@@ -498,16 +494,16 @@ export default function RelevamientoEspaciosVerdes() {
                 }}
                 opciones={Object.keys(espaciosPorComuna)}
               />
-           {comuna && !errorBackend && (
-  <CampoSelectConBuscador
-    titulo="Espacio Verde"
-    darkMode={darkMode}
-    value={espacioVerde}
-    disabled={ofertasCargadas.length > 0}
-    onChange={setEspacioVerde}
-    opciones={espaciosPorComuna[comuna] || []}
-  />
-)}
+              {comuna && !errorBackend && (
+                <CampoSelectConBuscador
+                  titulo="Espacio Verde"
+                  darkMode={darkMode}
+                  value={espacioVerde}
+                  disabled={ofertasCargadas.length > 0}
+                  onChange={setEspacioVerde}
+                  opciones={espaciosPorComuna[comuna] || []}
+                />
+              )}
             </div>
           </div>
         </section>
@@ -518,7 +514,8 @@ export default function RelevamientoEspaciosVerdes() {
             ref={ofertaRef}
             className={`rounded-[32px] p-6 md:p-8 mb-6 border transition-all duration-500 shadow-xl ${bordeSeccionPaso2}`}
           >
-            <div className="flex items-center gap-4 mb-8">
+            {/* Título — SIN el <p> adentro */}
+            <div className="flex items-center gap-4 mb-4">
               <span
                 className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${
                   animarSelector
@@ -539,18 +536,22 @@ export default function RelevamientoEspaciosVerdes() {
               >
                 Seleccione la Oferta a Relevar
               </h2>
-              <p
-  className={`mt-3 text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
-    darkMode
-      ? "bg-[#FFCB00]/10 border-[#FFCB00]/20 text-[#FFCB00]"
-      : "bg-[#FFF8DB] border-[#FFE27A] text-[#8A6A00]"
-  }`}
->
-  ⚠️ Recuerden: solo deben cargar las ofertas que realmente tenga el
-  espacio verde. Si el espacio no cuenta con alguna oferta (por ejemplo
-  Canil, Calistenia, Posta Aeróbica, etc.), esa oferta no debe cargarse.
-</p>
             </div>
+
+            {/* Aviso — ahora DEBAJO del título, a ancho completo */}
+            <p
+              className={`mb-8 text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
+                darkMode
+                  ? "bg-[#FFCB00]/10 border-[#FFCB00]/20 text-[#FFCB00]"
+                  : "bg-[#FFF8DB] border-[#FFE27A] text-[#8A6A00]"
+              }`}
+            >
+              ⚠️ Recuerden: solo deben cargar las ofertas que realmente tenga el
+              espacio verde. Si el espacio no cuenta con alguna oferta (por
+              ejemplo Canil, Calistenia, Posta Aeróbica, etc.), esa oferta no
+              debe cargarse.
+            </p>
+
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {Object.keys(preguntas).map((tipo) => {
                 const btnEstilo =
@@ -617,7 +618,6 @@ export default function RelevamientoEspaciosVerdes() {
               </button>
             </div>
 
-            {/* BOTONES GRANDES DE FOTO EJEMPLO */}
             {(ofertaActual === "Canil" || ofertaActual === "Calistenia") && (
               <div className="w-full mb-8">
                 <button
@@ -801,7 +801,7 @@ export default function RelevamientoEspaciosVerdes() {
         )}
       </div>
 
-      {/* POPUPS Y PANTALLAS DE CARGA */}
+      {/* ENVIANDO */}
       {enviandoFormulario && (
         <div className="fixed inset-0 z-[110] bg-[#07111F]/90 backdrop-blur-xl flex items-center justify-center p-6">
           <div
@@ -1009,7 +1009,6 @@ function CampoSelectConBuscador({
                   <div
                     key={opcion}
                     onClick={() => {
-                      opcion;
                       onChange(opcion);
                       setIsOpen(false);
                       setBusqueda("");
