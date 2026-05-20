@@ -518,33 +518,30 @@ export default function RelevamientoEspaciosVerdes() {
             ref={ofertaRef}
             className={`rounded-[32px] p-6 md:p-8 mb-6 border transition-all duration-500 shadow-xl ${bordeSeccionPaso2}`}
           >
-          <div className="mb-8">
-  <div className="flex items-center gap-4 mb-4">
-    <span
-      className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${
-        animarSelector
-          ? darkMode
-            ? "bg-[#8DE2D6] text-[#07111F]"
-            : "bg-[#FFCB00] text-[#07111F]"
-          : darkMode
-          ? "bg-slate-700 text-slate-200"
-          : "bg-[#153244] text-white"
-      }`}
-    >
-      2
-    </span>
-
-    <h2
-      className={`text-xl font-bold ${
-        darkMode ? "text-white" : "text-[#153244]"
-      }`}
-    >
-      Seleccione la Oferta a Relevar
-    </h2>
-  </div>
+      <div className="flex items-center gap-4 mb-8">
+  <span
+    className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${
+      animarSelector
+        ? darkMode
+          ? "bg-[#8DE2D6] text-[#07111F]"
+          : "bg-[#FFCB00] text-[#07111F]"
+        : darkMode
+        ? "bg-slate-700 text-slate-200"
+        : "bg-[#153244] text-white"
+    }`}
+  >
+    2
+  </span>
+  <h2
+    className={`text-xl font-bold ${
+      darkMode ? "text-white" : "text-[#153244]"
+    }`}
+  >
+    Seleccione la Oferta a Relevar
+  </h2>
 
   <p
-    className={`text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
+    className={`mt-3 text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
       darkMode
         ? "bg-[#FFCB00]/10 border-[#FFCB00]/20 text-[#FFCB00]"
         : "bg-[#FFF8DB] border-[#FFE27A] text-[#8A6A00]"
