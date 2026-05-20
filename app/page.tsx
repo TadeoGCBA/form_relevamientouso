@@ -189,6 +189,7 @@ const agentesOpciones = [
   "PONTORIERO MAXIMILIANO GASTON",
   "LOPEZ RODRIGO DANIEL",
   "CHAMES DUCA ELEAZAR MIGUEL",
+  "BARANZELLI PATRICIA BEATRIZ",
 ];
 
 interface OfertaCargada {
