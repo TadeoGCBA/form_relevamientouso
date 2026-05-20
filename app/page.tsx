@@ -539,6 +539,17 @@ export default function RelevamientoEspaciosVerdes() {
               >
                 Seleccione la Oferta a Relevar
               </h2>
+              <p
+  className={`mt-3 text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
+    darkMode
+      ? "bg-[#FFCB00]/10 border-[#FFCB00]/20 text-[#FFCB00]"
+      : "bg-[#FFF8DB] border-[#FFE27A] text-[#8A6A00]"
+  }`}
+>
+  ⚠️ Recuerden: solo deben cargar las ofertas que realmente tenga el
+  espacio verde. Si el espacio no cuenta con alguna oferta (por ejemplo
+  Canil, Calistenia, Posta Aeróbica, etc.), esa oferta no debe cargarse.
+</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {Object.keys(preguntas).map((tipo) => {
