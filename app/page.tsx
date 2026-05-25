@@ -484,7 +484,6 @@ export default function RelevamientoEspaciosVerdes() {
                   "15:00 hs",
                   "16:00 hs",
                   "17:00 hs",
-                  "18:00 hs",
                 ]}
               />
               <CampoSelect
