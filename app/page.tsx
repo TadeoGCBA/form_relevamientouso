@@ -254,41 +254,59 @@ export default function RelevamientoEspaciosVerdes() {
     localStorage.setItem("preferredTheme", nextMode ? "dark" : "light");
   };
 
-  useEffect(() => {
-    async function obtenerEspacios() {
-      try {
-        const response = await fetch(`${APPS_SCRIPT_URL}?action=espacios`);
-        const data = await response.json();
-        if (data.error) {
-          setErrorBackend(data.error);
-        } else {
-          setEspaciosPorComuna(data);
-        }
-      } catch {
-        setErrorBackend("Error de comunicación de red con el Apps Script");
-      } finally {
-        setLoadingEspacios(false);
-      }
-    }
-    obtenerEspacios();
-  }, []);
+useEffect(() => {
+  async function obtenerEspacios() {
+    setLoadingEspacios(true);
+    setErrorBackend(null);
 
-  const resetOferta = (tipo = "", activarAnimacion = false) => {
-    setOfertaActual(tipo);
-    setRespuestasActuales({});
-    setErrores({});
-    setAnimarSelector(activarAnimacion);
-    if (!tipo) {
-      setTimeout(
-        () =>
-          ofertaRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          }),
-        50
+    try {
+      const url = `${APPS_SCRIPT_URL}?action=espacios&t=${Date.now()}`;
+
+      const response = await fetch(url, {
+        method: "GET",
+        cache: "no-store",
+      });
+
+      const texto = await response.text();
+
+      if (!response.ok) {
+        throw new Error(
+          `Apps Script respondió HTTP ${response.status}: ${texto.slice(0, 200)}`
+        );
+      }
+
+      let data;
+
+      try {
+        data = JSON.parse(texto);
+      } catch {
+        console.error("Respuesta recibida de Apps Script:", texto);
+
+        throw new Error(
+          "Apps Script no devolvió JSON. Revisá la implementación de la aplicación web."
+        );
+      }
+
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
+      setEspaciosPorComuna(data);
+    } catch (error) {
+      console.error("ERROR OBTENIENDO ESPACIOS:", error);
+
+      setErrorBackend(
+        error instanceof Error
+          ? error.message
+          : "Error desconocido al conectar con Apps Script"
       );
+    } finally {
+      setLoadingEspacios(false);
     }
-  };
+  }
+
+  obtenerEspacios();
+}, []);
 
   const guardarOferta = () => {
     if (!ofertaActual) return;
