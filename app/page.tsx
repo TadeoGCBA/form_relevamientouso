@@ -80,6 +80,7 @@ const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Parkour": "/Area Deportiva/Parkour.jpeg",
   "Cantidad de Metegol": "/Area Deportiva/metegol.jpg",
   "Cantidad de Ping Pong": "/Area Deportiva/Ping Pong.jpg",
+
   "Cantidad de Personas en Trepadores": "/Patio de Juego/Trepador.png",
   "Cantidad de Personas en Tobogan": "/Patio de Juego/Tobogan.png",
   "Cantidad de Personas en Resortes": "/Patio de Juego/resortes.png",
@@ -89,6 +90,7 @@ const imagenesPorPregunta: Record<string, string> = {
   "Cantidad de Personas en Mangrullo": "/Patio de Juego/mangrullo.png",
   "Cantidad de Personas en Lomada": "/Patio de Juego/lomada.png",
   "Cantidad de Personas en Hamacas": "/Patio de Juego/hamacas.png",
+
   "Cantidad de personas en Caminador Simple": "/Postas Aerobicas/camsimple.png",
   "Cantidad de personas en Fortalecedor de Piernas":
     "/Postas Aerobicas/fortdepiernas.png",
@@ -112,94 +114,94 @@ const imagenesPorPregunta: Record<string, string> = {
 
 const agentesOpciones = [
   "ANGELINETTA ADRIEL NICOLAS",
-"BAEZ ARIEL ALEJANDRO",
-"BARAGIOLA OSVALDO GERMAN",
-"BIANCHI SUSANA ANTONIA",
-"BOREIKA SILVIA PATRICIA",
-"CABRAL DAVID LEANDRO EMANUEL",
-"CAMPANO LUCAS DAMIAN",
-"CARDOZO TATIANA MAGALI",
-"CARRO ANALÍA VERÓNICA",
-"CASARINO SEBASTIAN IGNACIO",
-"CEJAS ROSA",
-"CHAMES DUCA NATASHA",
-"CHAVOL SANTIAGO GABRIEL",
-"CORADINO CHRISTIAN SEBASTIAN",
-"CORO SANTIAGO",
-"COTIGNOLA FACUNDO MARTIN",
-"CRUZ PABLO DANIEL",
-"DA ROCHA MAXIMO ENRIQUE",
-"D'AQUILA HERNAN NATALIO",
-"ESPINDOLA GRACIELA ESTHER",
-"EVANS MARIA SOL",
-"FAILDE CARLOS ALBERTO",
-"FATALA NOELIA",
-"FERNANDEZ LETICIA CONCEPCION",
-"FERRADA GABRIEL OCTAVIO",
-"FLORES NORMA BEATRIZ",
-"FONTANA ANGEL EZEQUIEL",
-"GHIOLDI MARIA BELEN",
-"GIMENEZ MARIA EUGENIA",
-"GOMEZ DAMIAN EZEQUIEL",
-"GONZALEZ FACUNDO EZEQUIEL",
-"GONZALEZ YANINA GIMENA",
-"IBARROLA ARIEL ALEJANDRO",
-"INSAURRALDE NADIA SOLEDAD",
-"ISAURRALDE ADRIAN SIMON",
-"KALUTICH MARIA ANDREA",
-"LAGANA PATRICIO MANUEL",
-"LEDESMA LEONARDO ROBERTO",
-"LOPEZ HECTOR EMANUEL",
-"MAFFIOLI MERLINA ELIZABETH",
-"MAMANI GLORIA",
-"MAMANI NOEMI YOLANDA",
-"MANCEBO VERONICA ANDREA",
-"MARTINEZ FERNANDO ARIEL",
-"MORALES FEDERICO",
-"NOGUERA MIGUEL ANGEL",
-"OCAMPOS TERESITA DEL VALLE",
-"OLIVERA MARTIN EZEQUIEL",
-"PAREDES ROSA ESTHELA",
-"PEREZ CLAUDIO OMAR",
-"PONTORIERO VALENTIN",
-"PONZO MATIAS SEBASTIAN",
-"QUINTANA LAURA RAQUEL",
-"QUINTERO JUAN PABLO",
-"QUINTEROS JUAN PABLO",
-"QUIROGA GABRIELA",
-"RIVERO ALFREDO MANUEL",
-"ROMERO OSVALDO DANIEL",
-"SABORIDO RODRIGO",
-"SACCHINELI EMANUEL NICOLAS",
-"SANCHEZ CACERES GILDA",
-"SANCHEZ CAMILA",
-"TRASSENS ALEJANDRO DANIEL",
-"TRASSENS DAMIAN MARTIN",
-"VALDEZ OJEDA GISELA",
-"VAQUERO DANIELA MARISOL",
-"VAQUERO KARINA CHANTAL",
-"VELOZO MARCELA ALEJANDRA",
-"VIVEROS RAMON ALBERTO",
-"ZARAUZA FERNANDO GABRIEL",
-"ZOTAYANO GUSTAVO",
-"ZOTAYANO GUSTAVO DANIEL",
-"LAGANA GUIDO MARTIN",
-"LENTI AGUSTIN DANIEL",
-"PONTORIERO MAXIMILIANO GASTON",
-"LOPEZ RODRIGO DANIEL",
-"CHAMES DUCA ELEAZAR MIGUEL",
-"BARANZELLI PATRICIA BEATRIZ",
-"VAN BRUSSEL FEDERICO",
-"ANDREOLETTI LUCAS GERMAN",
-"CARRIZO CARLA NEREA",
-"VARANO RENDELL MARIA JOSE",
-"ISAURRALDE SHARON NOEMI",
-"GONZALEZ SHEILA DAIANA",
-"ECHEVERRIA VIRGINIA NOEMI",
-"SANTOS GONZALEZ ANIBAL AMADO",
-"CORRALES TOMAS LUIS",
-"QUIROS LUIS",
-"GONZALEZ SOTELO BETTIANA",
+  "BAEZ ARIEL ALEJANDRO",
+  "BARAGIOLA OSVALDO GERMAN",
+  "BIANCHI SUSANA ANTONIA",
+  "BOREIKA SILVIA PATRICIA",
+  "CABRAL DAVID LEANDRO EMANUEL",
+  "CAMPANO LUCAS DAMIAN",
+  "CARDOZO TATIANA MAGALI",
+  "CARRO ANALÍA VERÓNICA",
+  "CASARINO SEBASTIAN IGNACIO",
+  "CEJAS ROSA",
+  "CHAMES DUCA NATASHA",
+  "CHAVOL SANTIAGO GABRIEL",
+  "CORADINO CHRISTIAN SEBASTIAN",
+  "CORO SANTIAGO",
+  "COTIGNOLA FACUNDO MARTIN",
+  "CRUZ PABLO DANIEL",
+  "DA ROCHA MAXIMO ENRIQUE",
+  "D'AQUILA HERNAN NATALIO",
+  "ESPINDOLA GRACIELA ESTHER",
+  "EVANS MARIA SOL",
+  "FAILDE CARLOS ALBERTO",
+  "FATALA NOELIA",
+  "FERNANDEZ LETICIA CONCEPCION",
+  "FERRADA GABRIEL OCTAVIO",
+  "FLORES NORMA BEATRIZ",
+  "FONTANA ANGEL EZEQUIEL",
+  "GHIOLDI MARIA BELEN",
+  "GIMENEZ MARIA EUGENIA",
+  "GOMEZ DAMIAN EZEQUIEL",
+  "GONZALEZ FACUNDO EZEQUIEL",
+  "GONZALEZ YANINA GIMENA",
+  "IBARROLA ARIEL ALEJANDRO",
+  "INSAURRALDE NADIA SOLEDAD",
+  "ISAURRALDE ADRIAN SIMON",
+  "KALUTICH MARIA ANDREA",
+  "LAGANA PATRICIO MANUEL",
+  "LEDESMA LEONARDO ROBERTO",
+  "LOPEZ HECTOR EMANUEL",
+  "MAFFIOLI MERLINA ELIZABETH",
+  "MAMANI GLORIA",
+  "MAMANI NOEMI YOLANDA",
+  "MANCEBO VERONICA ANDREA",
+  "MARTINEZ FERNANDO ARIEL",
+  "MORALES FEDERICO",
+  "NOGUERA MIGUEL ANGEL",
+  "OCAMPOS TERESITA DEL VALLE",
+  "OLIVERA MARTIN EZEQUIEL",
+  "PAREDES ROSA ESTHELA",
+  "PEREZ CLAUDIO OMAR",
+  "PONTORIERO VALENTIN",
+  "PONZO MATIAS SEBASTIAN",
+  "QUINTANA LAURA RAQUEL",
+  "QUINTERO JUAN PABLO",
+  "QUINTEROS JUAN PABLO",
+  "QUIROGA GABRIELA",
+  "RIVERO ALFREDO MANUEL",
+  "ROMERO OSVALDO DANIEL",
+  "SABORIDO RODRIGO",
+  "SACCHINELI EMANUEL NICOLAS",
+  "SANCHEZ CACERES GILDA",
+  "SANCHEZ CAMILA",
+  "TRASSENS ALEJANDRO DANIEL",
+  "TRASSENS DAMIAN MARTIN",
+  "VALDEZ OJEDA GISELA",
+  "VAQUERO DANIELA MARISOL",
+  "VAQUERO KARINA CHANTAL",
+  "VELOZO MARCELA ALEJANDRA",
+  "VIVEROS RAMON ALBERTO",
+  "ZARAUZA FERNANDO GABRIEL",
+  "ZOTAYANO GUSTAVO",
+  "ZOTAYANO GUSTAVO DANIEL",
+  "LAGANA GUIDO MARTIN",
+  "LENTI AGUSTIN DANIEL",
+  "PONTORIERO MAXIMILIANO GASTON",
+  "LOPEZ RODRIGO DANIEL",
+  "CHAMES DUCA ELEAZAR MIGUEL",
+  "BARANZELLI PATRICIA BEATRIZ",
+  "VAN BRUSSEL FEDERICO",
+  "ANDREOLETTI LUCAS GERMAN",
+  "CARRIZO CARLA NEREA",
+  "VARANO RENDELL MARIA JOSE",
+  "ISAURRALDE SHARON NOEMI",
+  "GONZALEZ SHEILA DAIANA",
+  "ECHEVERRIA VIRGINIA NOEMI",
+  "SANTOS GONZALEZ ANIBAL AMADO",
+  "CORRALES TOMAS LUIS",
+  "QUIROS LUIS",
+  "GONZALEZ SOTELO BETTIANA",
 ];
 
 interface OfertaCargada {
@@ -212,25 +214,36 @@ export default function RelevamientoEspaciosVerdes() {
   const ofertaRef = useRef<HTMLDivElement>(null);
 
   const [darkMode, setDarkMode] = useState(true);
+
   const [espaciosPorComuna, setEspaciosPorComuna] = useState<
     Record<string, string[]>
   >({});
+
   const [loadingEspacios, setLoadingEspacios] = useState(true);
+
   const [errorBackend, setErrorBackend] = useState<string | null>(null);
+
   const [agente, setAgente] = useState("");
   const [horario, setHorario] = useState("");
   const [comuna, setComuna] = useState("");
   const [espacioVerde, setEspacioVerde] = useState("");
+
   const [ofertaActual, setOfertaActual] = useState("");
+
   const [respuestasActuales, setRespuestasActuales] = useState<
     Record<string, string>
   >({});
+
   const [ofertasCargadas, setOfertasCargadas] = useState<OfertaCargada[]>([]);
+
   const [errores, setErrores] = useState<Record<string, boolean>>({});
+
   const [enviandoFormulario, setEnviandoFormulario] = useState(false);
   const [mensajeExito, setMensajeExito] = useState(false);
   const [errorValidacion, setErrorValidacion] = useState(false);
+
   const [animarSelector, setAnimarSelector] = useState(false);
+
   const [modalGeneral, setModalGeneral] = useState<{
     abierto: boolean;
     tipo: string;
@@ -241,8 +254,13 @@ export default function RelevamientoEspaciosVerdes() {
     src: "",
   });
 
+  // ==========================================
+  // TEMA
+  // ==========================================
+
   useEffect(() => {
     const savedMode = localStorage.getItem("preferredTheme");
+
     if (savedMode !== null) {
       setDarkMode(savedMode === "dark");
     }
@@ -250,103 +268,179 @@ export default function RelevamientoEspaciosVerdes() {
 
   const handleThemeToggle = () => {
     const nextMode = !darkMode;
+
     setDarkMode(nextMode);
-    localStorage.setItem("preferredTheme", nextMode ? "dark" : "light");
+
+    localStorage.setItem(
+      "preferredTheme",
+      nextMode ? "dark" : "light"
+    );
   };
 
-useEffect(() => {
-  async function obtenerEspacios() {
-    setLoadingEspacios(true);
-    setErrorBackend(null);
+  // ==========================================
+  // OBTENER ESPACIOS VERDES
+  // ==========================================
 
-    try {
-      const url = `${APPS_SCRIPT_URL}?action=espacios&t=${Date.now()}`;
-
-      const response = await fetch(url, {
-        method: "GET",
-        cache: "no-store",
-      });
-
-      const texto = await response.text();
-
-      if (!response.ok) {
-        throw new Error(
-          `Apps Script respondió HTTP ${response.status}: ${texto.slice(0, 200)}`
-        );
-      }
-
-      let data;
+  useEffect(() => {
+    async function obtenerEspacios() {
+      setLoadingEspacios(true);
+      setErrorBackend(null);
 
       try {
-        data = JSON.parse(texto);
-      } catch {
-        console.error("Respuesta recibida de Apps Script:", texto);
+        const url = `${APPS_SCRIPT_URL}?action=espacios&t=${Date.now()}`;
 
-        throw new Error(
-          "Apps Script no devolvió JSON. Revisá la implementación de la aplicación web."
+        const response = await fetch(url, {
+          method: "GET",
+          cache: "no-store",
+        });
+
+        const texto = await response.text();
+
+        if (!response.ok) {
+          throw new Error(
+            `Apps Script respondió HTTP ${response.status}: ${texto.slice(
+              0,
+              200
+            )}`
+          );
+        }
+
+        let data: Record<string, string[]> & {
+          error?: string;
+        };
+
+        try {
+          data = JSON.parse(texto);
+        } catch {
+          console.error(
+            "Respuesta recibida de Apps Script:",
+            texto
+          );
+
+          throw new Error(
+            "Apps Script no devolvió JSON. Revisá la implementación de la aplicación web."
+          );
+        }
+
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        setEspaciosPorComuna(data);
+      } catch (error) {
+        console.error(
+          "ERROR OBTENIENDO ESPACIOS:",
+          error
         );
+
+        setEspaciosPorComuna({});
+
+        setErrorBackend(
+          error instanceof Error
+            ? error.message
+            : "Error desconocido al conectar con Apps Script"
+        );
+      } finally {
+        setLoadingEspacios(false);
       }
-
-      if (data.error) {
-        throw new Error(data.error);
-      }
-
-      setEspaciosPorComuna(data);
-    } catch (error) {
-      console.error("ERROR OBTENIENDO ESPACIOS:", error);
-
-      setErrorBackend(
-        error instanceof Error
-          ? error.message
-          : "Error desconocido al conectar con Apps Script"
-      );
-    } finally {
-      setLoadingEspacios(false);
     }
-  }
 
-  obtenerEspacios();
-}, []);
+    obtenerEspacios();
+  }, []);
+
+  // ==========================================
+  // RESET OFERTA
+  // ==========================================
+
+  const resetOferta = (
+    tipo = "",
+    activarAnimacion = false
+  ) => {
+    setOfertaActual(tipo);
+    setRespuestasActuales({});
+    setErrores({});
+    setAnimarSelector(activarAnimacion);
+
+    if (!tipo) {
+      setTimeout(() => {
+        ofertaRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 50);
+    }
+  };
+
+  // ==========================================
+  // GUARDAR OFERTA EN LA COLA LOCAL
+  // ==========================================
 
   const guardarOferta = () => {
-    if (!ofertaActual) return;
+    if (!ofertaActual) {
+      return;
+    }
+
     const nuevasErrores: Record<string, boolean> = {};
-    preguntas[ofertaActual].forEach((p) => {
+
+    preguntas[ofertaActual].forEach((pregunta) => {
       if (
-        p !== "Observaciones" &&
-        (respuestasActuales[p] === undefined || respuestasActuales[p] === "")
+        pregunta !== "Observaciones" &&
+        (
+          respuestasActuales[pregunta] === undefined ||
+          respuestasActuales[pregunta] === ""
+        )
       ) {
-        nuevasErrores[p] = true;
+        nuevasErrores[pregunta] = true;
       }
     });
 
     if (Object.keys(nuevasErrores).length > 0) {
       setErrores(nuevasErrores);
       setErrorValidacion(true);
-      setTimeout(() => setErrorValidacion(false), 2500);
+
+      setTimeout(() => {
+        setErrorValidacion(false);
+      }, 2500);
+
       return;
     }
 
-    setOfertasCargadas([
-      ...ofertasCargadas,
-      {
-        id: Date.now(),
-        tipo: ofertaActual,
-        respuestas: { ...respuestasActuales },
+    const nuevaOferta: OfertaCargada = {
+      id: Date.now(),
+      tipo: ofertaActual,
+      respuestas: {
+        ...respuestasActuales,
       },
+    };
+
+    setOfertasCargadas((prev) => [
+      ...prev,
+      nuevaOferta,
     ]);
+
     resetOferta("", false);
   };
 
+  // ==========================================
+  // ENVIAR TODO A APPS SCRIPT
+  // ==========================================
+
   async function finalizarRelevamiento() {
-    if (ofertasCargadas.length === 0) return;
+    if (ofertasCargadas.length === 0) {
+      return;
+    }
+
     setEnviandoFormulario(true);
+    setMensajeExito(false);
+
     try {
       for (const oferta of ofertasCargadas) {
         const respuestasOrdenadas: Record<string, string> = {};
-        preguntas[oferta.tipo].forEach(
-          (p) => (respuestasOrdenadas[p] = oferta.respuestas[p] || "")
-        );
+
+        preguntas[oferta.tipo].forEach((pregunta) => {
+          respuestasOrdenadas[pregunta] =
+            oferta.respuestas[pregunta] || "";
+        });
 
         const params = new URLSearchParams({
           action: "guardar",
@@ -359,23 +453,82 @@ useEffect(() => {
             respuestas: respuestasOrdenadas,
           }),
         });
-        await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`);
+
+        const response = await fetch(
+          `${APPS_SCRIPT_URL}?${params.toString()}&t=${Date.now()}`,
+          {
+            method: "GET",
+            cache: "no-store",
+          }
+        );
+
+        const texto = await response.text();
+
+        if (!response.ok) {
+          throw new Error(
+            `Error HTTP ${response.status} al guardar ${oferta.tipo}`
+          );
+        }
+
+        let resultado: {
+          success?: boolean;
+          error?: string;
+        };
+
+        try {
+          resultado = JSON.parse(texto);
+        } catch {
+          console.error(
+            "Respuesta inválida al guardar:",
+            texto
+          );
+
+          throw new Error(
+            `Apps Script devolvió una respuesta inválida al guardar ${oferta.tipo}`
+          );
+        }
+
+        if (!resultado.success) {
+          throw new Error(
+            resultado.error ||
+              `No se pudo guardar ${oferta.tipo}`
+          );
+        }
       }
+
       setMensajeExito(true);
-      await new Promise((r) => setTimeout(r, 2500));
+
+      await new Promise((resolve) => {
+        setTimeout(resolve, 2500);
+      });
+
       setAgente("");
       setHorario("");
       setComuna("");
       setEspacioVerde("");
       setOfertasCargadas([]);
+
       resetOferta("", false);
-    } catch {
-      alert("Error al enviar el formulario. Pruebe otra vez.");
+    } catch (error) {
+      console.error(
+        "ERROR AL ENVIAR FORMULARIO:",
+        error
+      );
+
+      alert(
+        error instanceof Error
+          ? `No se pudo enviar el formulario:\n${error.message}`
+          : "Error al enviar el formulario. Intentá nuevamente."
+      );
     } finally {
       setEnviandoFormulario(false);
       setMensajeExito(false);
     }
   }
+
+  // ==========================================
+  // ESTILO PASO 2
+  // ==========================================
 
   const bordeSeccionPaso2 = animarSelector
     ? darkMode
@@ -387,10 +540,10 @@ useEffect(() => {
 
   return (
     <main
-      className={`${
-        montserrat.className
-      } min-h-screen transition-colors duration-300 pb-20 ${
-        darkMode ? "bg-[#07111F] text-slate-100" : "bg-[#EDF2F7] text-[#153244]"
+      className={`${montserrat.className} min-h-screen transition-colors duration-300 pb-20 ${
+        darkMode
+          ? "bg-[#07111F] text-slate-100"
+          : "bg-[#EDF2F7] text-[#153244]"
       }`}
     >
       {/* HEADER */}
@@ -403,17 +556,28 @@ useEffect(() => {
       >
         <h1
           className={`text-3xl md:text-5xl font-black tracking-tighter ${
-            darkMode ? "text-white" : "text-[#153244]"
+            darkMode
+              ? "text-white"
+              : "text-[#153244]"
           }`}
         >
           Relevamiento{" "}
-          <span className={darkMode ? "text-[#8de2d6]" : "text-[#FFCB00]"}>
+          <span
+            className={
+              darkMode
+                ? "text-[#8de2d6]"
+                : "text-[#FFCB00]"
+            }
+          >
             de Uso
           </span>
         </h1>
+
         <p
           className={`text-xs font-bold uppercase tracking-[0.2em] mt-2 ${
-            darkMode ? "text-white/40" : "text-[#153244]/60"
+            darkMode
+              ? "text-white/40"
+              : "text-[#153244]/60"
           }`}
         >
           Formulario
@@ -421,7 +585,7 @@ useEffect(() => {
       </header>
 
       <div className="max-w-4xl mx-auto px-4">
-        {/* CONMUTADOR DE MODO */}
+        {/* MODO */}
         <div className="flex justify-end mb-6">
           <button
             type="button"
@@ -432,20 +596,26 @@ useEffect(() => {
                 : "border-[#153244]/20 bg-white text-[#153244] hover:bg-[#F1F5F9]"
             }`}
           >
-            {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+            {darkMode
+              ? "☀️ Modo Claro"
+              : "🌙 Modo Oscuro"}
           </button>
         </div>
 
+        {/* ERROR BACKEND */}
         {errorBackend && (
           <div className="bg-red-500/10 border-2 border-red-500/30 p-6 rounded-3xl mb-6 text-red-300 text-sm font-semibold flex items-center gap-4">
-            <span className="text-2xl">❌</span>
+            <span className="text-2xl">
+              ❌
+            </span>
+
             <div>
               <p className="font-black uppercase text-xs tracking-wider text-red-400">
                 Error en Base de Datos:
               </p>
+
               <p>
-                {errorBackend}. Revisá la configuración de macros en tu planilla
-                de Google.
+                {errorBackend}
               </p>
             </div>
           </div>
@@ -469,14 +639,18 @@ useEffect(() => {
             >
               1
             </span>
+
             <h2
               className={`text-xl font-bold ${
-                darkMode ? "text-white" : "text-[#153244]"
+                darkMode
+                  ? "text-white"
+                  : "text-[#153244]"
               }`}
             >
               Informacion General
             </h2>
           </div>
+
           <div className="grid grid-cols-1 gap-6">
             <CampoSelectConBuscador
               titulo="Selección de Agente"
@@ -486,6 +660,7 @@ useEffect(() => {
               disabled={ofertasCargadas.length > 0}
               opciones={agentesOpciones}
             />
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <CampoSelect
                 titulo="Horario de Relevamiento"
@@ -505,6 +680,7 @@ useEffect(() => {
                   "17:00 hs",
                 ]}
               />
+
               <CampoSelect
                 titulo="Comuna"
                 darkMode={darkMode}
@@ -520,16 +696,23 @@ useEffect(() => {
                   setComuna(v);
                   setEspacioVerde("");
                 }}
-                opciones={Object.keys(espaciosPorComuna)}
+                opciones={Object.keys(
+                  espaciosPorComuna
+                )}
               />
+
               {comuna && !errorBackend && (
                 <CampoSelectConBuscador
                   titulo="Espacio Verde"
                   darkMode={darkMode}
                   value={espacioVerde}
-                  disabled={ofertasCargadas.length > 0}
+                  disabled={
+                    ofertasCargadas.length > 0
+                  }
                   onChange={setEspacioVerde}
-                  opciones={espaciosPorComuna[comuna] || []}
+                  opciones={
+                    espaciosPorComuna[comuna] || []
+                  }
                 />
               )}
             </div>
@@ -537,80 +720,85 @@ useEffect(() => {
         </section>
 
         {/* PASO 2 */}
-        {espacioVerde && agente && horario && (
-          <section
-            ref={ofertaRef}
-            className={`rounded-[32px] p-6 md:p-8 mb-6 border transition-all duration-500 shadow-xl ${bordeSeccionPaso2}`}
-          >
-            {/* Título — SIN el <p> adentro */}
-            <div className="flex items-center gap-4 mb-4">
-              <span
-                className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${
-                  animarSelector
-                    ? darkMode
-                      ? "bg-[#8DE2D6] text-[#07111F]"
-                      : "bg-[#FFCB00] text-[#07111F]"
-                    : darkMode
-                    ? "bg-slate-700 text-slate-200"
-                    : "bg-[#153244] text-white"
-                }`}
-              >
-                2
-              </span>
-              <h2
-                className={`text-xl font-bold ${
-                  darkMode ? "text-white" : "text-[#153244]"
-                }`}
-              >
-                Seleccione la Oferta a Relevar
-              </h2>
-            </div>
-
-            {/* Aviso — ahora DEBAJO del título, a ancho completo */}
-            <p
-              className={`mb-8 text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
-                darkMode
-                  ? "bg-[#FFCB00]/10 border-[#FFCB00]/20 text-[#FFCB00]"
-                  : "bg-[#FFF8DB] border-[#FFE27A] text-[#8A6A00]"
-              }`}
+        {espacioVerde &&
+          agente &&
+          horario && (
+            <section
+              ref={ofertaRef}
+              className={`rounded-[32px] p-6 md:p-8 mb-6 border transition-all duration-500 shadow-xl ${bordeSeccionPaso2}`}
             >
-              ⚠️ Recuerden: solo deben cargar las ofertas que realmente tenga el
-              espacio verde. Si el espacio no cuenta con alguna oferta (por
-              ejemplo Canil, Calistenia, Posta Aeróbica, etc.), esa oferta no
-              debe cargarse.
-            </p>
+              <div className="flex items-center gap-4 mb-4">
+                <span
+                  className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-sm transition-colors duration-500 ${
+                    animarSelector
+                      ? darkMode
+                        ? "bg-[#8DE2D6] text-[#07111F]"
+                        : "bg-[#FFCB00] text-[#07111F]"
+                      : darkMode
+                      ? "bg-slate-700 text-slate-200"
+                      : "bg-[#153244] text-white"
+                  }`}
+                >
+                  2
+                </span>
 
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {Object.keys(preguntas).map((tipo) => {
-                const btnEstilo =
-                  ofertaActual === tipo
-                    ? darkMode
-                      ? "border-[#8DE2D6] bg-[#8DE2D6]/10 text-[#8DE2D6]"
-                      : "border-[#153244] bg-[#153244]/10 text-[#153244] font-black"
-                    : animarSelector
-                    ? darkMode
-                      ? "border-[#8DE2D6]/60 bg-[#8DE2D6]/5 text-white animate-pulse"
-                      : "border-[#FFCB00]/60 bg-[#FFCB00]/5 text-[#153244] animate-pulse"
-                    : darkMode
-                    ? "border-white/10 bg-[#07111F] text-white/60 hover:border-white/20"
-                    : "border-[#153244]/20 bg-[#F8FAFC] text-[#153244]/60 hover:border-[#153244]/40";
-                return (
-                  <button
-                    key={tipo}
-                    onClick={() => {
-                      setOfertaActual(tipo);
-                      setErrores({});
-                      setAnimarSelector(false);
-                    }}
-                    className={`p-4 rounded-2xl border-2 transition-all text-sm font-bold h-24 flex items-center justify-center text-center cursor-pointer ${btnEstilo}`}
-                  >
-                    {tipo}
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-        )}
+                <h2
+                  className={`text-xl font-bold ${
+                    darkMode
+                      ? "text-white"
+                      : "text-[#153244]"
+                  }`}
+                >
+                  Seleccione la Oferta a Relevar
+                </h2>
+              </div>
+
+              <p
+                className={`mb-8 text-sm font-semibold leading-relaxed rounded-2xl px-4 py-3 border ${
+                  darkMode
+                    ? "bg-[#FFCB00]/10 border-[#FFCB00]/20 text-[#FFCB00]"
+                    : "bg-[#FFF8DB] border-[#FFE27A] text-[#8A6A00]"
+                }`}
+              >
+                ⚠️ Recuerden: solo deben cargar las ofertas que realmente tenga el espacio verde. Si el espacio no cuenta con alguna oferta, esa oferta no debe cargarse.
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                {Object.keys(
+                  preguntas
+                ).map((tipo) => {
+                  const btnEstilo =
+                    ofertaActual === tipo
+                      ? darkMode
+                        ? "border-[#8DE2D6] bg-[#8DE2D6]/10 text-[#8DE2D6]"
+                        : "border-[#153244] bg-[#153244]/10 text-[#153244] font-black"
+                      : animarSelector
+                      ? darkMode
+                        ? "border-[#8DE2D6]/60 bg-[#8DE2D6]/5 text-white animate-pulse"
+                        : "border-[#FFCB00]/60 bg-[#FFCB00]/5 text-[#153244] animate-pulse"
+                      : darkMode
+                      ? "border-white/10 bg-[#07111F] text-white/60 hover:border-white/20"
+                      : "border-[#153244]/20 bg-[#F8FAFC] text-[#153244]/60 hover:border-[#153244]/40";
+
+                  return (
+                    <button
+                      key={tipo}
+                      type="button"
+                      onClick={() => {
+                        setOfertaActual(tipo);
+                        setRespuestasActuales({});
+                        setErrores({});
+                        setAnimarSelector(false);
+                      }}
+                      className={`p-4 rounded-2xl border-2 transition-all text-sm font-bold h-24 flex items-center justify-center text-center cursor-pointer ${btnEstilo}`}
+                    >
+                      {tipo}
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          )}
 
         {/* PASO 3 */}
         {ofertaActual && (
@@ -625,28 +813,39 @@ useEffect(() => {
               <div className="text-center sm:text-left">
                 <span
                   className={`text-xs font-black uppercase tracking-widest ${
-                    darkMode ? "text-[#8DE2D6]" : "text-[#153244]/60"
+                    darkMode
+                      ? "text-[#8DE2D6]"
+                      : "text-[#153244]/60"
                   }`}
                 >
                   Informacion de:
                 </span>
+
                 <h3
                   className={`text-3xl font-black mt-1 ${
-                    darkMode ? "text-white" : "text-[#153244]"
+                    darkMode
+                      ? "text-white"
+                      : "text-[#153244]"
                   }`}
                 >
                   {ofertaActual}
                 </h3>
               </div>
+
               <button
-                onClick={() => resetOferta("", true)}
+                type="button"
+                onClick={() =>
+                  resetOferta("", true)
+                }
                 className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 px-5 py-3 rounded-2xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer"
               >
                 ✕ Descartar esta Carga
               </button>
             </div>
 
-            {(ofertaActual === "Canil" || ofertaActual === "Calistenia") && (
+            {(ofertaActual === "Canil" ||
+              ofertaActual ===
+                "Calistenia") && (
               <div className="w-full mb-8">
                 <button
                   type="button"
@@ -672,24 +871,38 @@ useEffect(() => {
             )}
 
             <div className="space-y-4">
-              {preguntas[ofertaActual].map((pregunta) => (
+              {preguntas[
+                ofertaActual
+              ].map((pregunta) => (
                 <div key={pregunta}>
-                  {pregunta === "Observaciones" ? (
+                  {pregunta ===
+                  "Observaciones" ? (
                     <div className="mt-6">
                       <label
                         className={`block text-xs font-black uppercase mb-2 ml-2 ${
-                          darkMode ? "text-white/40" : "text-[#153244]"
+                          darkMode
+                            ? "text-white/40"
+                            : "text-[#153244]"
                         }`}
                       >
                         Comentarios adicionales
                       </label>
+
                       <textarea
-                        value={respuestasActuales[pregunta] || ""}
+                        value={
+                          respuestasActuales[
+                            pregunta
+                          ] || ""
+                        }
                         onChange={(e) =>
-                          setRespuestasActuales({
-                            ...respuestasActuales,
-                            [pregunta]: e.target.value,
-                          })
+                          setRespuestasActuales(
+                            (prev) => ({
+                              ...prev,
+                              [pregunta]:
+                                e.target
+                                  .value,
+                            })
+                          )
                         }
                         placeholder="Escribí acá si notaste algo raro..."
                         className={`w-full rounded-2xl border p-5 outline-none transition-all ${
@@ -704,26 +917,54 @@ useEffect(() => {
                     <ControlCantidad
                       titulo={pregunta}
                       darkMode={darkMode}
-                      error={errores[pregunta]}
-                      value={respuestasActuales[pregunta]}
-                      imagenEjemplo={imagenesPorPregunta[pregunta]}
-                      ocultarBotonNoTiene={
-                        ofertaActual === "Canil" ||
-                        ofertaActual === "Calistenia"
+                      error={
+                        errores[
+                          pregunta
+                        ]
                       }
-                      onChange={(val: string) => {
-                        setRespuestasActuales({
-                          ...respuestasActuales,
-                          [pregunta]: val,
-                        });
-                        setErrores({ ...errores, [pregunta]: false });
+                      value={
+                        respuestasActuales[
+                          pregunta
+                        ]
+                      }
+                      imagenEjemplo={
+                        imagenesPorPregunta[
+                          pregunta
+                        ]
+                      }
+                      ocultarBotonNoTiene={
+                        ofertaActual ===
+                          "Canil" ||
+                        ofertaActual ===
+                          "Calistenia"
+                      }
+                      onChange={(
+                        val: string
+                      ) => {
+                        setRespuestasActuales(
+                          (prev) => ({
+                            ...prev,
+                            [pregunta]:
+                              val,
+                          })
+                        );
+
+                        setErrores(
+                          (prev) => ({
+                            ...prev,
+                            [pregunta]:
+                              false,
+                          })
+                        );
                       }}
                     />
                   )}
                 </div>
               ))}
             </div>
+
             <button
+              type="button"
               onClick={guardarOferta}
               className={`w-full mt-12 py-6 rounded-3xl text-xl font-black hover:scale-[1.02] active:scale-95 transition-all shadow-lg cursor-pointer ${
                 darkMode
@@ -736,97 +977,157 @@ useEffect(() => {
           </section>
         )}
 
-        {/* RESUMEN DE COLA */}
-        {ofertasCargadas.length > 0 && !ofertaActual && (
-          <div className="mt-12 bg-white/5 rounded-[32px] p-1 border border-white/10 shadow-xl">
-            <div
-              className={`rounded-[30px] p-6 md:p-8 ${
-                darkMode ? "bg-[#122033]" : "bg-white"
-              }`}
-            >
-              <h3
-                className={`text-2xl font-black mb-6 ${
-                  darkMode ? "text-white" : "text-[#153244]"
+        {/* RESUMEN */}
+        {ofertasCargadas.length >
+          0 &&
+          !ofertaActual && (
+            <div className="mt-12 bg-white/5 rounded-[32px] p-1 border border-white/10 shadow-xl">
+              <div
+                className={`rounded-[30px] p-6 md:p-8 ${
+                  darkMode
+                    ? "bg-[#122033]"
+                    : "bg-white"
                 }`}
               >
-                📋 Listas para enviar ({ofertasCargadas.length})
-              </h3>
-              <div className="space-y-3 mb-6">
-                {ofertasCargadas.map((o, i) => (
-                  <div
-                    key={o.id}
-                    className={`flex items-center justify-between p-5 rounded-2xl border gap-4 ${
-                      darkMode
-                        ? "bg-[#07111F] border-white/5"
-                        : "bg-[#F8FAFC] border-[#153244]/10"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <button
-                        onClick={() => {
-                          setOfertaActual(o.tipo);
-                          setRespuestasActuales(o.respuestas);
-                          setOfertasCargadas(
-                            ofertasCargadas.filter((item) => item.id !== o.id)
-                          );
-                        }}
-                        className={`w-10 h-10 rounded-full border flex items-center justify-center font-bold cursor-pointer ${
+                <h3
+                  className={`text-2xl font-black mb-6 ${
+                    darkMode
+                      ? "text-white"
+                      : "text-[#153244]"
+                  }`}
+                >
+                  📋 Listas para enviar (
+                  {
+                    ofertasCargadas.length
+                  }
+                  )
+                </h3>
+
+                <div className="space-y-3 mb-6">
+                  {ofertasCargadas.map(
+                    (o, i) => (
+                      <div
+                        key={o.id}
+                        className={`flex items-center justify-between p-5 rounded-2xl border gap-4 ${
                           darkMode
-                            ? "bg-[#8DE2D6]/10 border-[#8DE2D6]/30 text-[#8DE2D6]"
-                            : "bg-[#153244]/10 border-[#153244]/20 text-[#153244]"
+                            ? "bg-[#07111F] border-white/5"
+                            : "bg-[#F8FAFC] border-[#153244]/10"
                         }`}
                       >
-                        ✎
-                      </button>
-                      <div>
-                        <span
-                          className={`text-xs font-black block ${
-                            darkMode ? "text-slate-400" : "text-[#153244]/40"
-                          }`}
+                        <div className="flex items-center gap-4">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setOfertaActual(
+                                o.tipo
+                              );
+
+                              setRespuestasActuales(
+                                o.respuestas
+                              );
+
+                              setOfertasCargadas(
+                                (prev) =>
+                                  prev.filter(
+                                    (
+                                      item
+                                    ) =>
+                                      item.id !==
+                                      o.id
+                                  )
+                              );
+                            }}
+                            className={`w-10 h-10 rounded-full border flex items-center justify-center font-bold cursor-pointer ${
+                              darkMode
+                                ? "bg-[#8DE2D6]/10 border-[#8DE2D6]/30 text-[#8DE2D6]"
+                                : "bg-[#153244]/10 border-[#153244]/20 text-[#153244]"
+                            }`}
+                          >
+                            ✎
+                          </button>
+
+                          <div>
+                            <span
+                              className={`text-xs font-black block ${
+                                darkMode
+                                  ? "text-slate-400"
+                                  : "text-[#153244]/40"
+                              }`}
+                            >
+                              OFERTA{" "}
+                              {i + 1}
+                            </span>
+
+                            <span
+                              className={`font-bold text-lg ${
+                                darkMode
+                                  ? "text-white"
+                                  : "text-[#153244]"
+                              }`}
+                            >
+                              {o.tipo}
+                            </span>
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setOfertasCargadas(
+                              (prev) =>
+                                prev.filter(
+                                  (
+                                    item
+                                  ) =>
+                                    item.id !==
+                                    o.id
+                                )
+                            )
+                          }
+                          className="text-red-400/80 font-bold text-sm px-4 py-2 hover:bg-red-500/10 rounded-xl cursor-pointer"
                         >
-                          OFERTA {i + 1}
-                        </span>
-                        <span
-                          className={`font-bold text-lg ${
-                            darkMode ? "text-white" : "text-[#153244]"
-                          }`}
-                        >
-                          {o.tipo}
-                        </span>
+                          Eliminar
+                        </button>
                       </div>
-                    </div>
-                    <button
-                      onClick={() =>
-                        setOfertasCargadas(
-                          ofertasCargadas.filter((item) => item.id !== o.id)
-                        )
-                      }
-                      className="text-red-400/80 font-bold text-sm px-4 py-2 hover:bg-red-500/10 rounded-xl cursor-pointer"
-                    >
-                      Eliminar
-                    </button>
-                  </div>
-                ))}
+                    )
+                  )}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    resetOferta(
+                      "",
+                      true
+                    )
+                  }
+                  className={`w-full mb-4 border py-4 rounded-[20px] font-bold cursor-pointer flex items-center justify-center gap-2 transition-colors ${
+                    darkMode
+                      ? "bg-white/5 border-white/10 text-slate-200 hover:bg-white/10"
+                      : "bg-[#F8FAFC] border-[#153244]/10 text-[#153244] hover:bg-slate-100"
+                  }`}
+                >
+                  <span>
+                    ➕
+                  </span>
+                  Añadir otra Oferta
+                </button>
+
+                <button
+                  type="button"
+                  onClick={
+                    finalizarRelevamiento
+                  }
+                  disabled={
+                    enviandoFormulario
+                  }
+                  className="w-full bg-[#FFCB00] text-[#07111F] py-6 rounded-[24px] text-2xl font-black hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  Enviar Formulario
+                </button>
               </div>
-              <button
-                onClick={() => resetOferta("", true)}
-                className={`w-full mb-4 border py-4 rounded-[20px] font-bold cursor-pointer flex items-center justify-center gap-2 transition-colors ${
-                  darkMode
-                    ? "bg-white/5 border-white/10 text-slate-200 hover:bg-white/10"
-                    : "bg-[#F8FAFC] border-[#153244]/10 text-[#153244] hover:bg-slate-100"
-                }`}
-              >
-                <span>➕</span> Añadir otra Oferta
-              </button>
-              <button
-                onClick={finalizarRelevamiento}
-                className="w-full bg-[#FFCB00] text-[#07111F] py-6 rounded-[24px] text-2xl font-black hover:scale-105 active:scale-95 transition-all cursor-pointer"
-              >
-                Enviar Formulario
-              </button>
             </div>
-          </div>
-        )}
+          )}
       </div>
 
       {/* ENVIANDO */}
@@ -844,11 +1145,17 @@ useEffect(() => {
                 <div className="flex justify-center mb-8">
                   <div
                     className={`w-20 h-20 border-8 border-white/10 rounded-full animate-spin ${
-                      darkMode ? "border-t-[#8DE2D6]" : "border-t-[#153244]"
+                      darkMode
+                        ? "border-t-[#8DE2D6]"
+                        : "border-t-[#153244]"
                     }`}
-                  ></div>
+                  />
                 </div>
-                <h2 className="text-3xl font-black mb-2 uppercase">Enviando</h2>
+
+                <h2 className="text-3xl font-black mb-2 uppercase">
+                  Enviando
+                </h2>
+
                 <p
                   className={
                     darkMode
@@ -861,13 +1168,19 @@ useEffect(() => {
               </>
             ) : (
               <>
-                <div className="text-8xl mb-6 animate-bounce">✅</div>
+                <div className="text-8xl mb-6 animate-bounce">
+                  ✅
+                </div>
+
                 <h2 className="text-3xl font-black mb-2 uppercase">
                   ¡Recibido!
                 </h2>
+
                 <p
                   className={`font-bold uppercase tracking-widest text-xs ${
-                    darkMode ? "text-[#8DE2D6]" : "text-[#064E3B]"
+                    darkMode
+                      ? "text-[#8DE2D6]"
+                      : "text-[#064E3B]"
                   }`}
                 >
                   Carga completada con éxito
@@ -878,10 +1191,14 @@ useEffect(() => {
         </div>
       )}
 
+      {/* VALIDACION */}
       {errorValidacion && (
         <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[120] w-[90%] max-w-md">
-          <div className="bg-red-600 text-white p-5 rounded-3xl shadow-2xl font-black text-center flex items-center justify-center gap-4 border-4 border-red-400 animate-in slide-up-from-bottom">
-            <span className="text-3xl">⚠️</span>
+          <div className="bg-red-600 text-white p-5 rounded-3xl shadow-2xl font-black text-center flex items-center justify-center gap-4 border-4 border-red-400">
+            <span className="text-3xl">
+              ⚠️
+            </span>
+
             <span className="text-sm">
               ¡Atención! Te faltó completar algunas preguntas.
             </span>
@@ -902,14 +1219,23 @@ useEffect(() => {
             <div className="flex items-center justify-between mb-3 px-2">
               <h4
                 className={`text-xs font-bold uppercase tracking-wider ${
-                  darkMode ? "text-slate-400" : "text-[#153244]/60"
+                  darkMode
+                    ? "text-slate-400"
+                    : "text-[#153244]/60"
                 }`}
               >
-                Foto de Referencia: {modalGeneral.tipo}
+                Foto de Referencia:{" "}
+                {modalGeneral.tipo}
               </h4>
+
               <button
+                type="button"
                 onClick={() =>
-                  setModalGeneral({ abierto: false, tipo: "", src: "" })
+                  setModalGeneral({
+                    abierto: false,
+                    tipo: "",
+                    src: "",
+                  })
                 }
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black cursor-pointer ${
                   darkMode
@@ -920,10 +1246,15 @@ useEffect(() => {
                 ✕
               </button>
             </div>
+
             <div className="bg-[#07111F] rounded-2xl overflow-hidden border border-white/5 flex items-center justify-center max-h-[70vh]">
               <img
-                src={modalGeneral.src}
-                alt={modalGeneral.tipo}
+                src={
+                  modalGeneral.src
+                }
+                alt={
+                  modalGeneral.tipo
+                }
                 className="w-full h-auto object-contain max-h-[65vh]"
               />
             </div>
@@ -934,7 +1265,10 @@ useEffect(() => {
   );
 }
 
-// COMPONENTE: SELECT CON BUSCADOR
+// ==========================================
+// SELECT CON BUSCADOR
+// ==========================================
+
 interface CampoSelectConBuscadorProps {
   titulo: string;
   value: string;
@@ -950,21 +1284,42 @@ function CampoSelectConBuscador({
   opciones,
   disabled,
   darkMode,
-}: CampoSelectConBuscadorProps & { darkMode: boolean }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [busqueda, setBusqueda] = useState("");
-  const containerRef = useRef<HTMLDivElement>(null);
+}: CampoSelectConBuscadorProps & {
+  darkMode: boolean;
+}) {
+  const [isOpen, setIsOpen] =
+    useState(false);
+
+  const [busqueda, setBusqueda] =
+    useState("");
+
+  const containerRef =
+    useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClick(e: MouseEvent) {
+    function handleClick(
+      e: MouseEvent
+    ) {
       if (
         containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      )
+        !containerRef.current.contains(
+          e.target as Node
+        )
+      ) {
         setIsOpen(false);
+      }
     }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+
+    document.addEventListener(
+      "mousedown",
+      handleClick
+    );
+
+    return () =>
+      document.removeEventListener(
+        "mousedown",
+        handleClick
+      );
   }, []);
 
   const selectColor = value
@@ -975,30 +1330,57 @@ function CampoSelectConBuscador({
     ? "border-white/10 text-white/40 bg-[#07111F]"
     : "border-[#153244]/40 text-[#153244]/60 bg-white";
 
+  const opcionesFiltradas =
+    opciones.filter((o) =>
+      o
+        .toLowerCase()
+        .includes(
+          busqueda.toLowerCase()
+        )
+    );
+
   return (
-    <div className="flex flex-col relative" ref={containerRef}>
+    <div
+      className="flex flex-col relative"
+      ref={containerRef}
+    >
       <label
         className={`text-[10px] uppercase font-black tracking-widest mb-2 ml-2 ${
-          darkMode ? "text-white/40" : "text-[#153244]"
+          darkMode
+            ? "text-white/40"
+            : "text-[#153244]"
         }`}
       >
         {titulo}
       </label>
+
       <div
-        onClick={() => !disabled && setIsOpen(!isOpen)}
+        onClick={() =>
+          !disabled &&
+          setIsOpen((prev) => !prev)
+        }
         className={`w-full rounded-2xl px-5 py-5 border-2 transition-all font-bold flex justify-between items-center select-none ${selectColor} ${
-          disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+          disabled
+            ? "opacity-50 cursor-not-allowed"
+            : "cursor-pointer"
         }`}
       >
-        <span>{value || "Buscar y seleccionar..."}</span>
+        <span>
+          {value ||
+            "Buscar y seleccionar..."}
+        </span>
+
         <span
           className={`text-xl ${
-            darkMode ? "text-white opacity-30" : "text-[#153244] opacity-60"
+            darkMode
+              ? "text-white opacity-30"
+              : "text-[#153244] opacity-60"
           }`}
         >
           ▼
         </span>
       </div>
+
       {isOpen && (
         <div
           className={`absolute top-[102%] left-0 w-full border-2 rounded-2xl shadow-2xl z-[100] p-3 mt-1 ${
@@ -1011,7 +1393,11 @@ function CampoSelectConBuscador({
             type="text"
             placeholder="Escribí para buscar..."
             value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
+            onChange={(e) =>
+              setBusqueda(
+                e.target.value
+              )
+            }
             className={`w-full border rounded-xl px-4 py-3 font-bold text-sm outline-none mb-2 ${
               darkMode
                 ? "bg-[#07111F] text-white border-white/10 focus:border-[#8DE2D6]"
@@ -1019,12 +1405,10 @@ function CampoSelectConBuscador({
             }`}
             autoFocus
           />
+
           <div className="max-h-60 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
-            {opciones
-              .filter((o: string) =>
-                o.toLowerCase().includes(busqueda.toLowerCase())
-              )
-              .map((opcion: string) => {
+            {opcionesFiltradas.map(
+              (opcion) => {
                 const filaColor =
                   value === opcion
                     ? darkMode
@@ -1033,20 +1417,32 @@ function CampoSelectConBuscador({
                     : darkMode
                     ? "text-white/80 hover:bg-white/5"
                     : "text-[#153244]/80 hover:bg-[#F1F5F9]";
+
                 return (
                   <div
-                    key={opcion}
+                    key={
+                      opcion
+                    }
                     onClick={() => {
-                      onChange(opcion);
-                      setIsOpen(false);
-                      setBusqueda("");
+                      onChange(
+                        opcion
+                      );
+
+                      setIsOpen(
+                        false
+                      );
+
+                      setBusqueda(
+                        ""
+                      );
                     }}
                     className={`px-4 py-3 rounded-xl text-sm font-bold cursor-pointer transition-all ${filaColor}`}
                   >
                     {opcion}
                   </div>
                 );
-              })}
+              }
+            )}
           </div>
         </div>
       )}
@@ -1054,7 +1450,10 @@ function CampoSelectConBuscador({
   );
 }
 
-// COMPONENTE: SELECT COMÚN
+// ==========================================
+// SELECT COMÚN
+// ==========================================
+
 interface CampoSelectProps {
   titulo: string;
   value: string;
@@ -1074,63 +1473,86 @@ function CampoSelect({
   isLoading,
   loadingText,
   darkMode,
-}: CampoSelectProps & { darkMode: boolean }) {
-  const claseCargando = isLoading
-    ? darkMode
-      ? "border-[#FFCB00]/30 text-[#FFCB00]/70 animate-pulse bg-[#121c2b]"
-      : "bg-[#064E3B] border-[#047857] text-[#A7F3D0] animate-pulse"
-    : value
-    ? darkMode
-      ? "border-[#8DE2D6]/40 text-white bg-[#07111F]"
-      : "border-[#153244] text-[#153244] bg-white"
-    : darkMode
-    ? "border-white/10 text-white/40 bg-[#07111F]"
-    : "border-[#153244]/40 text-[#153244]/60 bg-white";
+}: CampoSelectProps & {
+  darkMode: boolean;
+}) {
+  const claseCargando =
+    isLoading
+      ? darkMode
+        ? "border-[#FFCB00]/30 text-[#FFCB00]/70 animate-pulse bg-[#121c2b]"
+        : "bg-[#064E3B] border-[#047857] text-[#A7F3D0] animate-pulse"
+      : value
+      ? darkMode
+        ? "border-[#8DE2D6]/40 text-white bg-[#07111F]"
+        : "border-[#153244] text-[#153244] bg-white"
+      : darkMode
+      ? "border-white/10 text-white/40 bg-[#07111F]"
+      : "border-[#153244]/40 text-[#153244]/60 bg-white";
 
   return (
     <div className="flex flex-col">
       <label
         className={`text-[10px] uppercase font-black tracking-widest mb-2 ml-2 ${
-          darkMode ? "text-white/40" : "text-[#153244]"
+          darkMode
+            ? "text-white/40"
+            : "text-[#153244]"
         }`}
       >
         {titulo}
       </label>
+
       <div className="relative">
         <select
           value={value}
-          disabled={disabled || isLoading}
-          onChange={(e) => onChange(e.target.value)}
+          disabled={
+            disabled ||
+            isLoading
+          }
+          onChange={(e) =>
+            onChange(
+              e.target.value
+            )
+          }
           className={`w-full rounded-2xl px-5 py-5 border-2 transition-all outline-none appearance-none font-bold ${claseCargando} ${
-            disabled && !isLoading
+            disabled &&
+            !isLoading
               ? "opacity-50 cursor-not-allowed"
               : "cursor-pointer"
           }`}
         >
           {isLoading ? (
-            <option value="">{loadingText}</option>
+            <option value="">
+              {loadingText}
+            </option>
           ) : (
             <>
-              <option value="">Seleccionar...</option>
-              {opciones.map((o: string) => (
-                <option
-                  key={o}
-                  value={o}
-                  className={
-                    darkMode
-                      ? "bg-[#121926] text-white"
-                      : "bg-white text-[#153244]"
-                  }
-                >
-                  {o}
-                </option>
-              ))}
+              <option value="">
+                Seleccionar...
+              </option>
+
+              {opciones.map(
+                (o) => (
+                  <option
+                    key={o}
+                    value={o}
+                    className={
+                      darkMode
+                        ? "bg-[#121926] text-white"
+                        : "bg-white text-[#153244]"
+                    }
+                  >
+                    {o}
+                  </option>
+                )
+              )}
             </>
           )}
         </select>
+
         <div
           className={`absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-xl ${
-            isLoading && !darkMode
+            isLoading &&
+            !darkMode
               ? "text-[#A7F3D0]"
               : darkMode
               ? "text-white opacity-30"
@@ -1144,11 +1566,18 @@ function CampoSelect({
   );
 }
 
-// COMPONENTE: CONTROL DE CANTIDAD
+// ==========================================
+// CONTROL DE CANTIDAD
+// ==========================================
+
 interface ControlCantidadProps {
   titulo: string;
-  value: string | undefined;
-  onChange: (val: string) => void;
+  value:
+    | string
+    | undefined;
+  onChange: (
+    val: string
+  ) => void;
   error?: boolean;
   ocultarBotonNoTiene?: boolean;
   imagenEjemplo?: string;
@@ -1162,48 +1591,85 @@ function ControlCantidad({
   ocultarBotonNoTiene,
   imagenEjemplo,
   darkMode,
-}: ControlCantidadProps & { darkMode: boolean }) {
-  const [modalAbierto, setModalAbierto] = useState(false);
+}: ControlCantidadProps & {
+  darkMode: boolean;
+}) {
+  const [
+    modalAbierto,
+    setModalAbierto,
+  ] = useState(false);
+
   const num =
     value === "No Tiene"
       ? -1
-      : value === "" || value === undefined
+      : value === "" ||
+        value === undefined
       ? null
-      : parseInt(value);
+      : parseInt(
+          value,
+          10
+        );
 
-  const ajustar = (delta: number) => {
-    const actual = num === null || num === -1 ? 0 : num;
-    onChange(String(Math.max(0, Math.min(50, actual + delta))));
+  const ajustar = (
+    delta: number
+  ) => {
+    const actual =
+      num === null ||
+      num === -1
+        ? 0
+        : num;
+
+    onChange(
+      String(
+        Math.max(
+          0,
+          Math.min(
+            50,
+            actual +
+              delta
+          )
+        )
+      )
+    );
   };
 
-  const wrapperEstilo = error
-    ? "border-red-500 bg-red-500/5"
-    : num !== null
-    ? darkMode
-      ? "border-[#8DE2D6]/40 bg-[#8DE2D6]/5"
-      : "border-[#153244] bg-[#153244]/5"
-    : darkMode
-    ? "border-white/5 bg-[#122033]"
-    : "border-[#153244]/20 bg-[#F8FAFC]";
+  const wrapperEstilo =
+    error
+      ? "border-red-500 bg-red-500/5"
+      : num !== null
+      ? darkMode
+        ? "border-[#8DE2D6]/40 bg-[#8DE2D6]/5"
+        : "border-[#153244] bg-[#153244]/5"
+      : darkMode
+      ? "border-white/5 bg-[#122033]"
+      : "border-[#153244]/20 bg-[#F8FAFC]";
 
   return (
     <div
       className={`p-4 md:p-6 rounded-[24px] border-2 transition-all ${wrapperEstilo}`}
     >
       <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
-        <div className="hidden sm:block w-28"></div>
+        <div className="hidden sm:block w-28" />
+
         <label
           className={`block text-sm font-bold text-center ${
-            darkMode ? "text-slate-300" : "text-[#153244]"
+            darkMode
+              ? "text-slate-300"
+              : "text-[#153244]"
           }`}
         >
           {titulo}
         </label>
+
         <div className="w-auto sm:w-28 flex justify-center sm:justify-end">
           {imagenEjemplo && (
             <button
               type="button"
-              onClick={() => setModalAbierto(true)}
+              onClick={() =>
+                setModalAbierto(
+                  true
+                )
+              }
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer shadow-sm ${
                 darkMode
                   ? "bg-slate-700/60 hover:bg-slate-700 text-[#8DE2D6] border-white/10"
@@ -1218,13 +1684,20 @@ function ControlCantidad({
 
       <div className="flex items-center justify-between max-w-[280px] mx-auto gap-4">
         <button
-          onClick={() =>
-            num === 0
-              ? !ocultarBotonNoTiene
-                ? onChange("No Tiene")
-                : null
-              : ajustar(-1)
-          }
+          type="button"
+          onClick={() => {
+            if (
+              num === 0 &&
+              !ocultarBotonNoTiene
+            ) {
+              onChange(
+                "No Tiene"
+              );
+              return;
+            }
+
+            ajustar(-1);
+          }}
           className={`w-14 h-14 rounded-2xl border flex items-center justify-center text-2xl font-black cursor-pointer ${
             darkMode
               ? "bg-[#07111F] border-white/10 text-white"
@@ -1233,6 +1706,7 @@ function ControlCantidad({
         >
           -
         </button>
+
         <div className="flex-1 text-center">
           <span
             className={`text-3xl font-black ${
@@ -1243,11 +1717,19 @@ function ControlCantidad({
                 : "text-[#153244]"
             }`}
           >
-            {num === -1 ? "No tiene" : num === null ? "?" : num}
+            {num === -1
+              ? "No tiene"
+              : num === null
+              ? "?"
+              : num}
           </span>
         </div>
+
         <button
-          onClick={() => ajustar(1)}
+          type="button"
+          onClick={() =>
+            ajustar(1)
+          }
           className={`w-14 h-14 rounded-2xl border flex items-center justify-center text-2xl font-black cursor-pointer ${
             darkMode
               ? "bg-[#07111F] border-white/10 text-white"
@@ -1261,7 +1743,12 @@ function ControlCantidad({
       {!ocultarBotonNoTiene && (
         <div className="flex justify-center mt-4">
           <button
-            onClick={() => onChange("No Tiene")}
+            type="button"
+            onClick={() =>
+              onChange(
+                "No Tiene"
+              )
+            }
             className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase transition-all cursor-pointer ${
               num === -1
                 ? darkMode
@@ -1277,44 +1764,58 @@ function ControlCantidad({
         </div>
       )}
 
-      {modalAbierto && (
-        <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div
-            className={`rounded-3xl border p-4 max-w-lg w-full relative ${
-              darkMode
-                ? "bg-[#122033] border-white/10"
-                : "bg-white border-[#153244]/10"
-            }`}
-          >
-            <div className="flex items-center justify-between mb-3 px-2">
-              <h4
-                className={`text-xs font-bold uppercase tracking-wider truncate max-w-[85%] ${
-                  darkMode ? "text-slate-400" : "text-[#153244]/60"
-                }`}
-              >
-                {titulo}
-              </h4>
-              <button
-                onClick={() => setModalAbierto(false)}
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black cursor-pointer ${
-                  darkMode
-                    ? "bg-white/5 text-white"
-                    : "bg-slate-200 text-[#153244]"
-                }`}
-              >
-                ✕
-              </button>
-            </div>
-            <div className="bg-[#07111F] rounded-2xl overflow-hidden flex items-center justify-center max-h-[70vh]">
-              <img
-                src={imagenEjemplo}
-                alt={titulo}
-                className="w-full h-auto object-contain max-h-[65vh]"
-              />
+      {modalAbierto &&
+        imagenEjemplo && (
+          <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div
+              className={`rounded-3xl border p-4 max-w-lg w-full relative ${
+                darkMode
+                  ? "bg-[#122033] border-white/10"
+                  : "bg-white border-[#153244]/10"
+              }`}
+            >
+              <div className="flex items-center justify-between mb-3 px-2">
+                <h4
+                  className={`text-xs font-bold uppercase tracking-wider truncate max-w-[85%] ${
+                    darkMode
+                      ? "text-slate-400"
+                      : "text-[#153244]/60"
+                  }`}
+                >
+                  {titulo}
+                </h4>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setModalAbierto(
+                      false
+                    )
+                  }
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black cursor-pointer ${
+                    darkMode
+                      ? "bg-white/5 text-white"
+                      : "bg-slate-200 text-[#153244]"
+                  }`}
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="bg-[#07111F] rounded-2xl overflow-hidden flex items-center justify-center max-h-[70vh]">
+                <img
+                  src={
+                    imagenEjemplo
+                  }
+                  alt={
+                    titulo
+                  }
+                  className="w-full h-auto object-contain max-h-[65vh]"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }
