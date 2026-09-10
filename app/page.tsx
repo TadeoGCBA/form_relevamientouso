@@ -492,6 +492,7 @@ async function finalizarRelevamiento() {
 
     try {
       resultado = JSON.parse(texto);
+      console.log("TIEMPOS APPS SCRIPT:", resultado);
     } catch {
       console.error(
         "Respuesta inválida al guardar:",
