@@ -425,106 +425,124 @@ export default function RelevamientoEspaciosVerdes() {
   // ENVIAR TODO A APPS SCRIPT
   // ==========================================
 
-  async function finalizarRelevamiento() {
-    if (ofertasCargadas.length === 0) {
-      return;
-    }
+  // ==========================================
+// ENVIAR TODO A APPS SCRIPT
+// ==========================================
 
-    setEnviandoFormulario(true);
-    setMensajeExito(false);
+async function finalizarRelevamiento() {
+  if (ofertasCargadas.length === 0) {
+    return;
+  }
 
-    try {
-      for (const oferta of ofertasCargadas) {
-        const respuestasOrdenadas: Record<string, string> = {};
+  setEnviandoFormulario(true);
+  setMensajeExito(false);
 
-        preguntas[oferta.tipo].forEach((pregunta) => {
-          respuestasOrdenadas[pregunta] =
-            oferta.respuestas[pregunta] || "";
-        });
+  try {
+    const ofertas = ofertasCargadas.map((oferta) => {
+      const respuestasOrdenadas: Record<string, string> = {};
 
-        const params = new URLSearchParams({
-          action: "guardar",
-          datos: JSON.stringify({
-            agente,
-            horario,
-            comuna,
-            espacioVerde,
-            tipo: oferta.tipo,
-            respuestas: respuestasOrdenadas,
-          }),
-        });
-
-        const response = await fetch(
-          `${APPS_SCRIPT_URL}?${params.toString()}&t=${Date.now()}`,
-          {
-            method: "GET",
-            cache: "no-store",
-          }
-        );
-
-        const texto = await response.text();
-
-        if (!response.ok) {
-          throw new Error(
-            `Error HTTP ${response.status} al guardar ${oferta.tipo}`
-          );
-        }
-
-        let resultado: {
-          success?: boolean;
-          error?: string;
-        };
-
-        try {
-          resultado = JSON.parse(texto);
-        } catch {
-          console.error(
-            "Respuesta inválida al guardar:",
-            texto
-          );
-
-          throw new Error(
-            `Apps Script devolvió una respuesta inválida al guardar ${oferta.tipo}`
-          );
-        }
-
-        if (!resultado.success) {
-          throw new Error(
-            resultado.error ||
-              `No se pudo guardar ${oferta.tipo}`
-          );
-        }
-      }
-
-      setMensajeExito(true);
-
-      await new Promise((resolve) => {
-        setTimeout(resolve, 2500);
+      preguntas[oferta.tipo].forEach((pregunta) => {
+        respuestasOrdenadas[pregunta] =
+          oferta.respuestas[pregunta] || "";
       });
 
-      setAgente("");
-      setHorario("");
-      setComuna("");
-      setEspacioVerde("");
-      setOfertasCargadas([]);
+      return {
+        tipo: oferta.tipo,
+        respuestas: respuestasOrdenadas,
+      };
+    });
 
-      resetOferta("", false);
-    } catch (error) {
-      console.error(
-        "ERROR AL ENVIAR FORMULARIO:",
-        error
-      );
+    const payload = {
+      agente,
+      horario,
+      comuna,
+      espacioVerde,
+      ofertas,
+    };
 
-      alert(
-        error instanceof Error
-          ? `No se pudo enviar el formulario:\n${error.message}`
-          : "Error al enviar el formulario. Intentá nuevamente."
+    const params = new URLSearchParams({
+      action: "guardarMultiple",
+      datos: JSON.stringify(payload),
+    });
+
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+
+      headers: {
+        "Content-Type":
+          "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+
+      body: params.toString(),
+    });
+
+    const texto = await response.text();
+
+    if (!response.ok) {
+      throw new Error(
+        `Apps Script respondió HTTP ${response.status}`
       );
-    } finally {
-      setEnviandoFormulario(false);
-      setMensajeExito(false);
     }
+
+    let resultado: {
+      success?: boolean;
+      error?: string;
+      cantidad?: number;
+    };
+
+    try {
+      resultado = JSON.parse(texto);
+    } catch {
+      console.error(
+        "Respuesta inválida al guardar:",
+        texto
+      );
+
+      throw new Error(
+        "Apps Script devolvió una respuesta inválida"
+      );
+    }
+
+    if (!resultado.success) {
+      throw new Error(
+        resultado.error ||
+          "No se pudo guardar el relevamiento"
+      );
+    }
+
+    setMensajeExito(true);
+
+    // Solo para mostrar brevemente el mensaje de éxito.
+    // El guardado ya terminó cuando Apps Script respondió.
+    await new Promise((resolve) => {
+      setTimeout(resolve, 800);
+    });
+
+    setAgente("");
+    setHorario("");
+    setComuna("");
+    setEspacioVerde("");
+    setOfertasCargadas([]);
+
+    resetOferta("", false);
+
+  } catch (error) {
+    console.error(
+      "ERROR AL ENVIAR FORMULARIO:",
+      error
+    );
+
+    alert(
+      error instanceof Error
+        ? `No se pudo enviar el formulario:\n${error.message}`
+        : "Error al enviar el formulario. Intentá nuevamente."
+    );
+
+  } finally {
+    setEnviandoFormulario(false);
+    setMensajeExito(false);
   }
+}
 
   // ==========================================
   // ESTILO PASO 2
