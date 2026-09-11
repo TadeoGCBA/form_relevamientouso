@@ -115,6 +115,10 @@ main.text-slate-100 > div > section {
   border-color: #294657 !important;
 }
 
+main.text-slate-100 .form-brand-logo {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
 main.text-slate-100 > header h1,
 main.text-slate-100 > header h1 span,
 main.text-slate-100 section h2,

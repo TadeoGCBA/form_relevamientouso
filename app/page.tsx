@@ -574,7 +574,7 @@ async function finalizarRelevamiento() {
         }`}
       >
         <img
-          src="/logo-ba.png"
+          src="/logo-ba-transparent.png"
           alt="Buenos Aires Ciudad"
           className="form-brand-logo"
         />
