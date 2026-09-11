@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Formulario | Relevamiento de Uso",
   description: "Formulario de Ofertas de Espacios Verdes",
+  icons: {
+    icon: "/app-icon-192.png",
+    apple: "/app-icon-192.png",
+  },
 };
 
 export default function RootLayout({
