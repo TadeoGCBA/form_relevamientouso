@@ -1,0 +1,157 @@
+/* Capa visual institucional. La logica del formulario permanece en page.tsx. */
+:root {
+  --form-blue: #00617f;
+  --form-navy: #153244;
+  --form-yellow: #ffcb00;
+  --form-aqua: #8de2d6;
+  --form-surface: #ffffff;
+  --form-border: #dce5e9;
+}
+
+body {
+  background: #edf2f4;
+}
+
+main {
+  background-color: #f3f7f8 !important;
+  background-image:
+    linear-gradient(135deg, rgba(0, 97, 127, 0.035) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(0, 97, 127, 0.035) 25%, transparent 25%);
+  background-position: 0 0, 22px 22px;
+  background-size: 44px 44px;
+}
+
+main > header {
+  padding: 22px 20px 20px !important;
+  margin-bottom: 28px !important;
+  border-bottom: 2px solid var(--form-yellow) !important;
+  box-shadow: 0 4px 18px rgba(21, 50, 68, 0.07) !important;
+}
+
+.form-brand-logo {
+  display: block;
+  width: auto;
+  height: 42px;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
+
+main > header h1 {
+  color: var(--form-blue) !important;
+  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+  letter-spacing: -0.035em !important;
+}
+
+main > header h1 span {
+  color: var(--form-navy) !important;
+}
+
+main > div.max-w-4xl {
+  max-width: 980px !important;
+}
+
+main > div > section {
+  position: relative;
+  overflow: visible;
+  border-radius: 18px !important;
+  border-color: var(--form-border) !important;
+  box-shadow: 0 10px 30px rgba(21, 50, 68, 0.08) !important;
+}
+
+main > div > section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--form-blue);
+}
+
+main > div > section:nth-of-type(3n + 2)::before {
+  background: var(--form-yellow);
+}
+
+main > div > section:nth-of-type(3n)::before {
+  background: var(--form-aqua);
+}
+
+main section [class~="rounded-[32px]"],
+main section [class~="rounded-[24px]"],
+main section .rounded-3xl {
+  border-radius: 14px !important;
+}
+
+main button,
+main input,
+main select,
+main textarea {
+  border-radius: 12px !important;
+}
+
+main button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+main.text-slate-100 {
+  background-color: #071521 !important;
+  background-image:
+    linear-gradient(135deg, rgba(141, 226, 214, 0.025) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(141, 226, 214, 0.025) 25%, transparent 25%) !important;
+}
+
+main.text-slate-100 > header,
+main.text-slate-100 > div > section {
+  background-color: #102434 !important;
+  border-color: #294657 !important;
+}
+
+main.text-slate-100 > header h1,
+main.text-slate-100 > header h1 span,
+main.text-slate-100 section h2,
+main.text-slate-100 section h3,
+main.text-slate-100 section label {
+  color: #ffffff !important;
+}
+
+main.text-slate-100 section p {
+  color: #d8e4ea;
+}
+
+@media (max-width: 640px) {
+  main > header {
+    padding: 17px 16px 15px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .form-brand-logo {
+    height: 34px;
+    margin-bottom: 9px;
+  }
+
+  main > header h1 {
+    font-size: 1.75rem !important;
+  }
+
+  main > div.max-w-4xl {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  main > div > section {
+    padding: 20px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  main > div > section > div:first-child {
+    margin-bottom: 22px !important;
+  }
+
+  main input,
+  main select,
+  main textarea {
+    font-size: 16px !important;
+  }
+
+  main button {
+    min-height: 44px;
+  }
+}

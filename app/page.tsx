@@ -573,6 +573,11 @@ async function finalizarRelevamiento() {
             : "bg-white border-[#153244]/10 shadow-sm"
         }`}
       >
+        <img
+          src="/logo-ba.png"
+          alt="Buenos Aires Ciudad"
+          className="form-brand-logo"
+        />
         <h1
           className={`text-3xl md:text-5xl font-black tracking-tighter ${
             darkMode
@@ -720,20 +725,28 @@ async function finalizarRelevamiento() {
                 )}
               />
 
-              {comuna && !errorBackend && (
-                <CampoSelectConBuscador
-                  titulo="Espacio Verde"
-                  darkMode={darkMode}
-                  value={espacioVerde}
-                  disabled={
-                    ofertasCargadas.length > 0
-                  }
-                  onChange={setEspacioVerde}
-                  opciones={
-                    espaciosPorComuna[comuna] || []
-                  }
-                />
-              )}
+              <CampoSelectConBuscador
+                titulo="Espacio Verde"
+                darkMode={darkMode}
+                value={espacioVerde}
+                placeholder={
+                  loadingEspacios
+                    ? "Cargando espacios..."
+                    : !comuna
+                    ? "Primero seleccioná una comuna"
+                    : "Buscar y seleccionar..."
+                }
+                disabled={
+                  !comuna ||
+                  !!errorBackend ||
+                  loadingEspacios ||
+                  ofertasCargadas.length > 0
+                }
+                onChange={setEspacioVerde}
+                opciones={
+                  espaciosPorComuna[comuna] || []
+                }
+              />
             </div>
           </div>
         </section>
@@ -1294,6 +1307,7 @@ interface CampoSelectConBuscadorProps {
   onChange: (val: string) => void;
   opciones: string[];
   disabled?: boolean;
+  placeholder?: string;
 }
 
 function CampoSelectConBuscador({
@@ -1302,6 +1316,7 @@ function CampoSelectConBuscador({
   onChange,
   opciones,
   disabled,
+  placeholder = "Buscar y seleccionar...",
   darkMode,
 }: CampoSelectConBuscadorProps & {
   darkMode: boolean;
@@ -1386,7 +1401,7 @@ function CampoSelectConBuscador({
       >
         <span>
           {value ||
-            "Buscar y seleccionar..."}
+            placeholder}
         </span>
 
         <span
