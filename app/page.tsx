@@ -1417,7 +1417,7 @@ function CampoSelectConBuscador({
 
       {isOpen && (
         <div
-          className={`absolute top-[102%] left-0 w-full border-2 rounded-2xl shadow-2xl z-[100] p-3 mt-1 ${
+          className={`form-search-menu absolute top-[102%] left-0 w-full border-2 rounded-2xl shadow-2xl z-[100] p-3 mt-1 ${
             darkMode
               ? "bg-[#121926] border-slate-700"
               : "bg-white border-[#CBD5E1]"

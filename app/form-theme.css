@@ -91,6 +91,17 @@ main button {
   -webkit-tap-highlight-color: transparent;
 }
 
+.form-search-menu {
+  position: static !important;
+  margin-top: 10px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 22px rgba(21, 50, 68, 0.12) !important;
+}
+
+.form-search-menu .max-h-60 {
+  max-height: 190px !important;
+}
+
 main.text-slate-100 {
   background-color: #071521 !important;
   background-image:
